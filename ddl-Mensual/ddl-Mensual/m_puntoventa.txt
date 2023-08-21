@@ -1,0 +1,19 @@
+DROP TABLE "trusted".m_puntoventa;
+
+CREATE TABLE IF NOT EXISTS "trusted".m_puntoventa
+(
+	cod_cadena VARCHAR(65535)   ENCODE lzo
+	,des_puntoventa VARCHAR(65535)   ENCODE lzo
+	,cod_tienda VARCHAR(65535)   ENCODE lzo
+	,des_tienda VARCHAR(65535)   ENCODE lzo
+	,cod_departamento VARCHAR(65535)   ENCODE lzo
+	,cod_provincia VARCHAR(65535)   ENCODE lzo
+	,cod_distrito VARCHAR(65535)   ENCODE lzo
+	,flg_direcciongps INTEGER   ENCODE az64
+	,des_longitud_corde VARCHAR(65535)   ENCODE lzo
+	,des_latitud_corde VARCHAR(65535)   ENCODE lzo
+)
+DISTSTYLE EVEN
+;
+
+COMMIT;

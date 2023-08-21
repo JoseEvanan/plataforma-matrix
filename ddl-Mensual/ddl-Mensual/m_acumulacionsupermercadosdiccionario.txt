@@ -1,0 +1,24 @@
+DROP TABLE "trusted".m_acumulacionsupermercadosdiccionario;
+
+CREATE TABLE IF NOT EXISTS "trusted".m_acumulacionsupermercadosdiccionario
+(
+	cod_articulo VARCHAR(100)   ENCODE lzo
+	,cod_articulooriginal VARCHAR(100)   ENCODE lzo
+	,des_supermercadosdiccionario VARCHAR(1000)   ENCODE lzo
+	,cod_departamento VARCHAR(100)   ENCODE lzo
+	,des_acumulacionsupermercadodiccionario VARCHAR(1000)   ENCODE lzo
+	,des_departamento VARCHAR(1000)   ENCODE lzo
+	,des_categoria VARCHAR(1000)   ENCODE lzo
+	,cod_subcategoria VARCHAR(100)   ENCODE lzo
+	,des_subcategoria VARCHAR(1000)   ENCODE lzo
+	,des_marca VARCHAR(1000)   ENCODE lzo
+	,des_acumulacionsupermercadodiccionario2 VARCHAR(1000)   ENCODE lzo
+	,cod_proveedor VARCHAR(100)   ENCODE lzo
+	,des_proveedor VARCHAR(1000)   ENCODE lzo
+)
+<<Error - UNKNOWN DISTSTYLE>>
+;
+
+GRANT SELECT on "trusted".m_acumulacionsupermercadosdiccionario to redshift_user;
+
+COMMIT;

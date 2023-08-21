@@ -1,0 +1,50 @@
+{
+	"table_name": "T_ACUMULACIONPRIMAX",
+	"bucket_name": "ue1stgdesaas3ftp001",
+	"path": "RAW-SFTP/F685/Mayo2023",
+	"filename": "F685B_A.TXT,F685B_B.TXT,F685B_C.TXT,F685B_D.TXT,F685B_E.TXT,F685B_F.TXT,F685B_G.TXT",
+	"data": [
+		{
+			"order": 1,
+			"type": "VARCHAR(100)",
+			"size": 18,
+			"name": "ID_ACUMULACION"
+		},
+		{
+			"order": 2,
+			"type": "BIGINT",
+			"size": 15,
+			"name": "NUM_SECCUENCIAL"
+		},
+		{
+			"order": 3,
+			"type": "VARCHAR(100)",
+			"size": 14,
+			"name": "COD_PRODUCTOPRIMAX"
+		},
+		{
+			"order": 4,
+			"type": "VARCHAR(1000)",
+			"size": 50,
+			"name": "DES_ACUMULACIONPRIMAX"
+		},
+		{
+			"order": 5,
+			"type": "DECIMAL(8,3)",
+			"size": 8,
+			"name": "CAN_ACUMULACION"
+		},
+		{
+			"order": 6,
+			"type": "VARCHAR(1000)",
+			"size": 1,
+			"name": "DES_SIGNO"
+		},
+		{
+			"order": 7,
+			"type": "DECIMAL(15,2)",
+			"size": 15,
+			"name": "IMP_SOLESPRODUCTO"
+		}
+	]
+}

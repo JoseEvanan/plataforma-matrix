@@ -1,0 +1,17 @@
+DROP TABLE "trusted".t_logactualizacion;
+
+CREATE TABLE IF NOT EXISTS "trusted".t_logactualizacion
+(
+	cod_personath VARCHAR(100)   ENCODE lzo
+	,cod_seccambio VARCHAR(100)   ENCODE lzo
+	,cod_usuario VARCHAR(100)   ENCODE lzo
+	,des_campomodificado VARCHAR(1000)   ENCODE lzo
+	,fec_logatualizacion TIMESTAMP WITHOUT TIME ZONE   ENCODE lzo
+	,feh_actualizacion TIMESTAMP WITHOUT TIME ZONE   ENCODE lzo
+)
+<<Error - UNKNOWN DISTSTYLE>>
+;
+
+GRANT SELECT on "trusted".t_logactualizacion to redshift_user;
+
+COMMIT;

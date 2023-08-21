@@ -1,0 +1,104 @@
+{
+	"table_name": "T_ACUMULACIONDELOSI",
+	"bucket_name": "ue1stgdesaas3ftp001",
+	"path": "RAW-SFTP/F685/Mayo2023",
+	"filename": "F685K_A.TXT,F685K_B.TXT,F685K_C.TXT,F685K_D.TXT,F685K_E.TXT,F685K_F.TXT",
+	"data": [
+		{
+			"order": 1,
+			"type": "VARCHAR(100)",
+			"size": 18,
+			"name": "ID_ACUMULACIONDELOSI"
+		},
+		{
+			"order": 2,
+			"type": "BIGINT",
+			"size": 15,
+			"name": "NUM_SECUENCIAL"
+		},
+		{
+			"order": 3,
+			"type": "VARCHAR(100)",
+			"size": 14,
+			"name": "COD_PRODUCTODELOSI"
+		},
+		{
+			"order": 4,
+			"type": "VARCHAR(1000)",
+			"size": 45,
+			"name": "DES_ACUMULACIONDELOSI1"
+		},
+		{
+			"order": 5,
+			"type": "VARCHAR(1000)",
+			"size": 45,
+			"name": "DES_ACUMULACIONDELOSI2"
+		},
+		{
+			"order": 6,
+			"type": "VARCHAR(1000)",
+			"size": 45,
+			"name": "DES_ACUMULACIONDELOSI3"
+		},
+		{
+			"order": 7,
+			"type": "VARCHAR(1000)",
+			"size": 45,
+			"name": "DES_ACUMULACIONDELOSI4"
+		},
+		{
+			"order": 8,
+			"type": "VARCHAR(1000)",
+			"size": 45,
+			"name": "DES_ACUMULACIONDELOSI5"
+		},
+		{
+			"order": 9,
+			"type": "VARCHAR(1000)",
+			"size": 45,
+			"name": "DES_ACUMULACIONDELOSI6"
+		},
+		{
+			"order": 10,
+			"type": "VARCHAR(1000)",
+			"size": 45,
+			"name": "DES_ACUMULACIONDELOSI7"
+		},
+		{
+			"order": 11,
+			"type": "VARCHAR(1000)",
+			"size": 45,
+			"name": "DES_ACUMULACIONDELOSI8"
+		},
+		{
+			"order": 12,
+			"type": "VARCHAR(1000)",
+			"size": 45,
+			"name": "DES_ACUMULACIONDELOSI9"
+		},
+		{
+			"order": 13,
+			"type": "VARCHAR(1000)",
+			"size": 45,
+			"name": "DES_ACUMULACIONDELOSI10"
+		},
+		{
+			"order": 14,
+			"type": "DECIMAL(8,3)",
+			"size": 8,
+			"name": "CAN_ACUMULACIONDELOSI"
+		},
+		{
+			"order": 15,
+			"type": "VARCHAR(1000)",
+			"size": 1,
+			"name": "DES_SIGNO"
+		},
+		{
+			"order": 16,
+			"type": "DECIMAL(15,2)",
+			"size": 15,
+			"name": "IMP_SOLESPRODUCTO"
+		}
+	]
+}

@@ -1,0 +1,116 @@
+{
+	"table_name": "T_ACUMULACION",
+	"bucket_name": "ue1stgdesaas3ftp001",
+	"path": "RAW-SFTP/F685/Mayo2023",
+	"filename": "F685_1.TXT,F685_2.TXT,F685_3.TXT,F685_4.TXT,F685_5.TXT,F685_6.TXT,F685_7.TXT,F685_A.TXT,F685_B.TXT,F685_C.TXT,F685_D.TXT,F685_E.TXT,F685_F.TXT,F685_G.TXT,F685_H.TXT,F685_I.TXT,F685_J.TXT,F685_K.TXT,F685_L.TXT,F685_M.TXT,F685_N.TXT,F685_O.TXT,F685_P.TXT,F685_Q.TXT,F685_R.TXT,F685_S.TXT,F685_T.TXT,F685_U.TXT,F685_V.TXT,F685_W.TXT,F685_X.TXT,F685_Y.TXT,F685_Z.TXT",
+	"data": [
+		{
+			"order": 1,
+			"type": "VARCHAR(100)",
+			"size": 10,
+			"name": "COD_PERSONA"
+		},
+		{
+			"order": 2,
+			"type": "VARCHAR(100)",
+			"size": 3,
+			"name": "TIP_CUENTA"
+		},
+		{
+			"order": 3,
+			"type": "VARCHAR(100)",
+			"size": 19,
+			"name": "COD_TARJETA"
+		},
+		{
+			"order": 4,
+			"type": "VARCHAR(1000)",
+			"size": 4,
+			"name": "DES_ACUMULACIONCADENA"
+		},
+		{
+			"order": 5,
+			"type": "VARCHAR(1000)",
+			"size": 4,
+			"name": "DES_ACUMULACIONTIENDA"
+		},
+		{
+			"order": 6,
+			"type": "TIMESTAMP",
+			"size": 8,
+			"name": "FEC_TRANSACCION"
+		},
+		{
+			"order": 7,
+			"type": "smalldatetime",
+			"size": 8,
+			"name": "FEH_TRANSACCION"
+		},
+		{
+			"order": 8,
+			"type": "VARCHAR(1000)",
+			"size": 6,
+			"name": "DES_CAJA"
+		},
+		{
+			"order": 9,
+			"type": "BIGINT",
+			"size": 6,
+			"name": "NUM_SECUENCIA"
+		},
+		{
+			"order": 10,
+			"type": "DECIMAL(15,2)",
+			"size": 15,
+			"name": "NUM_SOLES"
+		},
+		{
+			"order": 11,
+			"type": "VARCHAR(1000)",
+			"size": 1,
+			"name": "DES_SIGNOSOLES"
+		},
+		{
+			"order": 12,
+			"type": "DECIMAL(15,2)",
+			"size": 15,
+			"name": "NUM_PUNTOSACUMULADOS"
+		},
+		{
+			"order": 13,
+			"type": "VARCHAR(1000)",
+			"size": 1,
+			"name": "DES_SIGNOPUNTOS"
+		},
+		{
+			"order": 14,
+			"type": "TIMESTAMP",
+			"size": 8,
+			"name": "FEC_ASIGNACION"
+		},
+		{
+			"order": 15,
+			"type": "VARCHAR(100)",
+			"size": 7,
+			"name": "COD_PROMOACUMULACION"
+		},
+		{
+			"order": 16,
+			"type": "VARCHAR(100)",
+			"size": 10,
+			"name": "TIP_ASIGNACION"
+		},
+		{
+			"order": 17,
+			"type": "VARCHAR(100)",
+			"size": 10,
+			"name": "COD_PERSONATH"
+		},
+		{
+			"order": 18,
+			"type": "VARCHAR(100)",
+			"size": 18,
+			"name": "ID_ACUMULACION"
+		}
+	]
+}

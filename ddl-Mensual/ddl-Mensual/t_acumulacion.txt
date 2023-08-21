@@ -1,0 +1,27 @@
+DROP TABLE "trusted".t_acumulacion;
+
+CREATE TABLE IF NOT EXISTS "trusted".t_acumulacion
+(
+	cod_persona VARCHAR(65535)   ENCODE lzo
+	,tip_cuenta VARCHAR(65535)   ENCODE lzo
+	,cod_tarjeta VARCHAR(65535)   ENCODE lzo
+	,des_acumulacioncadena VARCHAR(65535)   ENCODE lzo
+	,des_acumulaciontienda VARCHAR(65535)   ENCODE lzo
+	,fec_transaccion TIMESTAMP WITHOUT TIME ZONE   ENCODE az64
+	,feh_transaccion VARCHAR(65535)   ENCODE lzo
+	,des_caja VARCHAR(65535)   ENCODE lzo
+	,num_secuencia INTEGER   ENCODE az64
+	,num_soles REAL   
+	,des_signosoles VARCHAR(65535)   ENCODE lzo
+	,num_puntosacumulados REAL   
+	,des_signopuntos VARCHAR(65535)   ENCODE lzo
+	,fec_asignacion TIMESTAMP WITHOUT TIME ZONE   ENCODE az64
+	,cod_promoacumulacion VARCHAR(65535)   ENCODE lzo
+	,tip_asignacion VARCHAR(65535)   ENCODE lzo
+	,cod_personath VARCHAR(65535)   ENCODE lzo
+	,id_acumulacion VARCHAR(65535)   ENCODE lzo
+)
+DISTSTYLE EVEN
+;
+
+COMMIT;

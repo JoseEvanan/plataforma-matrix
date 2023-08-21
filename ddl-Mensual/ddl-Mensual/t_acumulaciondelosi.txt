@@ -1,0 +1,27 @@
+DROP TABLE "trusted".t_acumulaciondelosi;
+
+CREATE TABLE IF NOT EXISTS "trusted".t_acumulaciondelosi
+(
+	id_acumulaciondelosi VARCHAR(100)   ENCODE lzo
+	,num_secuencial BIGINT   ENCODE lzo
+	,cod_productodelosi VARCHAR(100)   ENCODE lzo
+	,des_acumulaciondelosi1 VARCHAR(1000)   ENCODE lzo
+	,des_acumulaciondelosi2 VARCHAR(1000)   ENCODE lzo
+	,des_acumulaciondelosi3 VARCHAR(1000)   ENCODE lzo
+	,des_acumulaciondelosi4 VARCHAR(1000)   ENCODE lzo
+	,des_acumulaciondelosi5 VARCHAR(1000)   ENCODE lzo
+	,des_acumulaciondelosi6 VARCHAR(1000)   ENCODE lzo
+	,des_acumulaciondelosi7 VARCHAR(1000)   ENCODE lzo
+	,des_acumulaciondelosi8 VARCHAR(1000)   ENCODE lzo
+	,des_acumulaciondelosi9 VARCHAR(1000)   ENCODE lzo
+	,des_acumulaciondelosi10 VARCHAR(1000)   ENCODE lzo
+	,can_acumulaciondelosi NUMERIC(8,3)   ENCODE lzo
+	,des_signo VARCHAR(1000)   ENCODE lzo
+	,imp_solesproducto NUMERIC(15,2)   ENCODE lzo
+)
+<<Error - UNKNOWN DISTSTYLE>>
+;
+
+GRANT SELECT on "trusted".t_acumulaciondelosi to redshift_user;
+
+COMMIT;

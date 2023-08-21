@@ -1,0 +1,31 @@
+DROP TABLE "trusted".m_movimientofinanciero;
+
+CREATE TABLE IF NOT EXISTS "trusted".m_movimientofinanciero
+(
+	cod_esquema VARCHAR(100)   ENCODE lzo
+	,tip_proceso VARCHAR(100)   ENCODE lzo
+	,cod_procesoadm VARCHAR(100)   ENCODE lzo
+	,cod_secprocesoadm VARCHAR(100)   ENCODE lzo
+	,cod_personath VARCHAR(100)   ENCODE lzo
+	,cod_seguimiento VARCHAR(100)   ENCODE lzo
+	,cod_tarjeta VARCHAR(100)   ENCODE lzo
+	,fec_transaccion TIMESTAMP WITHOUT TIME ZONE   ENCODE lzo
+	,imp_solespagados NUMERIC(15,2)   ENCODE lzo
+	,cod_giro VARCHAR(100)   ENCODE lzo
+	,des_giro VARCHAR(1000)   ENCODE lzo
+	,cod_comercio VARCHAR(100)   ENCODE lzo
+	,des_comercio VARCHAR(1000)   ENCODE lzo
+	,cod_transaccion1 VARCHAR(100)   ENCODE lzo
+	,des_codigotransaccion1 VARCHAR(1000)   ENCODE lzo
+	,tip_transaccion VARCHAR(100)   ENCODE lzo
+	,cod_transaccion2 VARCHAR(100)   ENCODE lzo
+	,des_codigotransaccion2 VARCHAR(1000)   ENCODE lzo
+	,tip_operacion VARCHAR(100)   ENCODE lzo
+	,des_operacion VARCHAR(1000)   ENCODE lzo
+)
+<<Error - UNKNOWN DISTSTYLE>>
+;
+
+GRANT SELECT on "trusted".m_movimientofinanciero to redshift_user;
+
+COMMIT;

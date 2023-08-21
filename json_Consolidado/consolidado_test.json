@@ -1,0 +1,166 @@
+{
+    "M_TARJETA": {
+        "table_name": "M_TARJETA",
+        "bucket_name": "ue1stgdesaas3ftp001",
+        "path": "RAW-SFTP/F685/Mayo2023",
+        "filename": "F685G.TXT",
+        "type_file": "txt",
+        "table_name_dir": "CLTESTRJ",
+        "data": [
+            {
+                "order": 1,
+                "type": "VARCHAR(100)",
+                "size": 19,
+                "name": "cod_tarjeta"
+            },
+            {
+                "order": 2,
+                "type": "VARCHAR(100)",
+                "size": 1,
+                "name": "cod_estadotarjeta"
+            },
+            {
+                "order": 3,
+                "type": "VARCHAR(100)",
+                "size": 20,
+                "name": "des_estadotarjeta"
+            },
+            {
+                "order": 4,
+                "type": "VARCHAR(100)",
+                "size": 4,
+                "name": "tip_tarjeta"
+            },
+            {
+                "order": 5,
+                "type": "VARCHAR(100)",
+                "size": 20,
+                "name": "des_tiptarjeta"
+            },
+            {
+                "order": 6,
+                "type": "VARCHAR(100)",
+                "size": 10,
+                "name": "cod_personath"
+            },
+            {
+                "order": 7,
+                "type": "VARCHAR(100)",
+                "size": 10,
+                "name": "cod_persona"
+            },
+            {
+                "order": 8,
+                "type": "VARCHAR(100)",
+                "size": 3,
+                "name": "cod_cuenta"
+            },
+            {
+                "order": 9,
+                "type": "TIMESTAMP",
+                "size": 8,
+                "name": "fec_solicitud"
+            },
+            {
+                "order": 10,
+                "type": "TIMESTAMP",
+                "size": 8,
+                "name": "fec_afiliacion"
+            },
+            {
+                "order": 11,
+                "type": "VARCHAR(100)",
+                "size": 4,
+                "name": "des_afiliacioncadena"
+            },
+            {
+                "order": 12,
+                "type": "VARCHAR(100)",
+                "size": 4,
+                "name": "des_afiliaciontienda"
+            },
+            {
+                "order": 13,
+                "type": "VARCHAR(100)",
+                "size": 1,
+                "name": "tip_tarjetafinanciera"
+            },
+            {
+                "order": 14,
+                "type": "VARCHAR(100)",
+                "size": 15,
+                "name": "des_afiliacion"
+            }
+        ]
+    },
+    "M_PUNTOVENTA": {
+        "table_name": "M_PUNTOVENTA",
+        "bucket_name": "ue1stgdesaas3ftp001",
+        "path": "RAW-SFTP/F685/Mayo2023",
+        "filename": "F685F.TXT",
+        "type_file": "txt",
+        "table_name_dir": "PTOSVTA",
+        "data": [
+            {
+                "order": 1,
+                "type": "VARCHAR(100)",
+                "size": 4,
+                "name": "COD_CADENA"
+            },
+            {
+                "order": 2,
+                "type": "VARCHAR(1000)",
+                "size": 50,
+                "name": "DES_PUNTOVENTA"
+            },
+            {
+                "order": 3,
+                "type": "VARCHAR(100)",
+                "size": 4,
+                "name": "COD_TIENDA"
+            },
+            {
+                "order": 4,
+                "type": "VARCHAR(1000)",
+                "size": 50,
+                "name": "DES_TIENDA"
+            },
+            {
+                "order": 5,
+                "type": "VARCHAR(100)",
+                "size": 25,
+                "name": "COD_DEPARTAMENTO"
+            },
+            {
+                "order": 6,
+                "type": "VARCHAR(100)",
+                "size": 25,
+                "name": "COD_PROVINCIA"
+            },
+            {
+                "order": 7,
+                "type": "VARCHAR(100)",
+                "size": 25,
+                "name": "COD_DISTRITO"
+            },
+            {
+                "order": 8,
+                "type": "INTEGER",
+                "size": 1,
+                "name": "FLG_DIRECCIONGPS"
+            },
+            {
+                "order": 9,
+                "type": "VARCHAR(100)",
+                "size": 20,
+                "name": "DES_LONGITUD_CORDE"
+            },
+            {
+                "order": 10,
+                "type": "VARCHAR(100)",
+                "size": 20,
+                "name": "DES_LATITUD_CORDE"
+            }
+        ]
+    }
+}

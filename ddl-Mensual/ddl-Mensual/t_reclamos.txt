@@ -1,0 +1,26 @@
+DROP TABLE "trusted".t_reclamos;
+
+CREATE TABLE IF NOT EXISTS "trusted".t_reclamos
+(
+	cod_registro VARCHAR(65535)   ENCODE lzo
+	,cod_personath VARCHAR(65535)   ENCODE lzo
+	,num_tarjeta VARCHAR(65535)   ENCODE lzo
+	,cod_reclamo VARCHAR(65535)   ENCODE lzo
+	,des_reclamo VARCHAR(65535)   ENCODE lzo
+	,cod_estadoreclamo VARCHAR(65535)   ENCODE lzo
+	,des_estadoreclamo VARCHAR(65535)   ENCODE lzo
+	,nom_usuarioreclamo VARCHAR(65535)   ENCODE lzo
+	,fec_registroreclamo TIMESTAMP WITHOUT TIME ZONE   ENCODE az64
+	,feh_registroreclamo VARCHAR(65535)   ENCODE lzo
+	,des_registroreclamocadena VARCHAR(65535)   ENCODE lzo
+	,des_registroreclamotienda VARCHAR(65535)   ENCODE lzo
+	,nom_usuarioatencion VARCHAR(65535)   ENCODE lzo
+	,fec_atencionreclamo TIMESTAMP WITHOUT TIME ZONE   ENCODE az64
+	,feh_atencionreclamo VARCHAR(65535)   ENCODE lzo
+	,des_atencionreclamocadena VARCHAR(65535)   ENCODE lzo
+	,des_atencionreclamotienda VARCHAR(65535)   ENCODE lzo
+)
+DISTSTYLE EVEN
+;
+
+COMMIT;

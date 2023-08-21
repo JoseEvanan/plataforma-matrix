@@ -1,0 +1,9 @@
+Delta:
+    Clientes
+    Saldo
+Full:
+- Diccionario
+Backup:
+- Frecuencia - (Eberth)?? (David-Diario)(Semanal)
+Eliminacion de TRX(Periodo):
+    -Mantener historai de 24 meses 

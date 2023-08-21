@@ -1,0 +1,25 @@
+DROP TABLE "trusted".m_tarjeta;
+
+CREATE TABLE IF NOT EXISTS "trusted".m_tarjeta
+(
+	cod_tarjeta VARCHAR(100)   ENCODE lzo
+	,cod_estadotarjeta VARCHAR(100)   ENCODE bytedict
+	,des_estadotarjeta VARCHAR(1000)   ENCODE bytedict
+	,tip_tarjeta VARCHAR(100)   ENCODE bytedict
+	,des_tiptarjeta VARCHAR(1000)   ENCODE bytedict
+	,cod_personath VARCHAR(100)   ENCODE lzo
+	,cod_persona VARCHAR(100)   ENCODE lzo
+	,cod_cuenta VARCHAR(100)   ENCODE lzo
+	,fec_solicitud TIMESTAMP WITHOUT TIME ZONE   ENCODE az64
+	,fec_afiliacion TIMESTAMP WITHOUT TIME ZONE   ENCODE az64
+	,des_afiliacioncadena VARCHAR(1000)   ENCODE bytedict
+	,des_afiliaciontienda VARCHAR(1000)   ENCODE lzo
+	,tip_tarjetafinanciera VARCHAR(100)   ENCODE bytedict
+	,des_afiliacion VARCHAR(1000)   ENCODE lzo
+)
+<<Error - UNKNOWN DISTSTYLE>>
+;
+
+GRANT SELECT on "trusted".m_tarjeta to redshift_user;
+
+COMMIT;

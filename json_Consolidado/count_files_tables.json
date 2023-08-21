@@ -1,0 +1,50 @@
+{
+    "CLTESDAT": {
+        "count": 23
+    },
+    "CLTESDDA": {
+        "count": 34
+    },
+    "CLTESDIR": {
+        "count": 23
+    },
+    "CLTESDTM": {
+        "count": 177
+    },
+    "CLTESREC": {
+        "count": 7
+    },
+    "CLTESSAL": {
+        "count": 22
+    },
+    "CLTESTRJ": {
+        "count": 43
+    },
+    "CODPROMO": {
+        "count": 4
+    },
+    "PTOSVTA": {
+        "count": 4
+    },
+    "TACUCAB": {
+        "count": 706
+    },
+    "TACUDETD": {
+        "count": 119
+    },
+    "TACUDETP": {
+        "count": 203
+    },
+    "TACUDETS": {
+        "count": 3
+    },
+    "TCANCAB": {
+        "count": 59
+    },
+    "TCANDET": {
+        "count": 60
+    },
+    "TMUNFIN": {
+        "count": 11
+    }
+}

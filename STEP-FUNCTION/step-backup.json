@@ -1,0 +1,113 @@
+{
+  "Comment": "Parallel Example.",
+  "StartAt": "OTHERS",
+  "States": {
+    "OTHERS": {
+      "Type": "Parallel",
+      "End": true,
+      "Branches": [
+        {
+          "StartAt": "BDAPP",
+          "States": {
+            "BDAPP": {
+              "Type": "Task",
+              "Resource": "arn:aws:states:::glue:startJobRun.sync",
+              "ResultPath": "$.genericos_insudb.node1",
+              "End": true,
+              "Parameters": {
+                "JobName": "JA_MG_DTLK_001",
+                "Arguments": {
+                  "--DATABASE": "BDAPP",
+                  "--SCHEMA": "NONE",
+                  "--TABLE": "NONE",
+                  "--BLOQUE": "1-1"
+                }
+              }
+            }
+          }
+        },
+        {
+          "StartAt": "BDNNT",
+          "States": {
+            "BDNNT": {
+              "Type": "Task",
+              "Resource": "arn:aws:states:::glue:startJobRun.sync",
+              "ResultPath": "$.genericos_insudb.node2",
+              "End": true,
+              "Parameters": {
+                "JobName": "JA_MG_DTLK_001",
+                "Arguments": {
+                  "--DATABASE": "BDNNT",
+                  "--SCHEMA": "NONE",
+                  "--TABLE": "NONE",
+                  "--BLOQUE": "1-1"
+                }
+              }
+            }
+          }
+        },
+        {
+          "StartAt": "BDBPM",
+          "States": {
+            "BDBPM": {
+              "Type": "Task",
+              "Resource": "arn:aws:states:::glue:startJobRun.sync",
+              "ResultPath": "$.genericos_insudb.node3",
+              "End": true,
+              "Parameters": {
+                "JobName": "JA_MG_DTLK_001",
+                "Arguments": {
+                  "--DATABASE": "BDBPM",
+                  "--SCHEMA": "NONE",
+                  "--TABLE": "NONE",
+                  "--BLOQUE": "1-1"
+                }
+              }
+            }
+          }
+        },
+        {
+          "StartAt": "BDAS400",
+          "States": {
+            "BDAS400": {
+              "Type": "Task",
+              "Resource": "arn:aws:states:::glue:startJobRun.sync",
+              "ResultPath": "$.genericos_insudb.node4",
+              "End": true,
+              "Parameters": {
+                "JobName": "JA_MG_DTLK_001",
+                "Arguments": {
+                  "--DATABASE": "BDAS400",
+                  "--SCHEMA": "NONE",
+                  "--TABLE": "NONE",
+                  "--BLOQUE": "1-1"
+                }
+              }
+            }
+          }
+        },
+        
+        {
+          "StartAt": "BDRTEC",
+          "States": {
+            "BDRTEC": {
+              "Type": "Task",
+              "Resource": "arn:aws:states:::glue:startJobRun.sync",
+              "ResultPath": "$.genericos_insudb.node5",
+              "End": true,
+              "Parameters": {
+                "JobName": "JA_MG_DTLK_001",
+                "Arguments": {
+                  "--DATABASE": "BDRTEC",
+                  "--SCHEMA": "NONE",
+                  "--TABLE": "NONE",
+                  "--BLOQUE": "1-1"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

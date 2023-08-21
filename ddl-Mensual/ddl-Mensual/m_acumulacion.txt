@@ -1,0 +1,13 @@
+DROP TABLE "trusted".m_acumulacion;
+
+CREATE TABLE IF NOT EXISTS "trusted".m_acumulacion
+(
+	cod_promocionacumulacion VARCHAR(100)   ENCODE lzo
+	,des_promocionacumulacion VARCHAR(1000)   ENCODE lzo
+)
+<<Error - UNKNOWN DISTSTYLE>>
+;
+
+GRANT SELECT on "trusted".m_acumulacion to redshift_user;
+
+COMMIT;

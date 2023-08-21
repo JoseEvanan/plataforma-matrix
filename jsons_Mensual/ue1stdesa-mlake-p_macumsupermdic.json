@@ -1,0 +1,86 @@
+{
+	"table_name": "M_ACUMULACIONSUPERMERCADOSDICCIONARIO",
+	"bucket_name": "ue1stgdesaas3ftp001",
+	"path": "RAW-SFTP/F685/Enero2023",
+	"filename": "F685M.zip",
+	"data": [
+		{
+			"order": 1,
+			"type": "VARCHAR(100)",
+			"size": 20,
+			"name": "COD_ARTICULO"
+		},
+		{
+			"order": 2,
+			"type": "VARCHAR(100)",
+			"size": 20,
+			"name": "COD_ARTICULOORIGINAL"
+		},
+		{
+			"order": 3,
+			"type": "VARCHAR(1000)",
+			"size": 50,
+			"name": "DES_SUPERMERCADOSDICCIONARIO"
+		},
+		{
+			"order": 4,
+			"type": "VARCHAR(100)",
+			"size": 20,
+			"name": "COD_DEPARTAMENTO"
+		},
+		{
+			"order": 5,
+			"type": "VARCHAR(1000)",
+			"size": 100,
+			"name": "DES_ACUMULACIONSUPERMERCADODICCIONARIO"
+		},
+		{
+			"order": 6,
+			"type": "VARCHAR(1000)",
+			"size": 20,
+			"name": "DES_DEPARTAMENTO"
+		},
+		{
+			"order": 7,
+			"type": "VARCHAR(1000)",
+			"size": 100,
+			"name": "DES_CATEGORIA"
+		},
+		{
+			"order": 8,
+			"type": "VARCHAR(100)",
+			"size": 20,
+			"name": "COD_SUBCATEGORIA"
+		},
+		{
+			"order": 9,
+			"type": "VARCHAR(1000)",
+			"size": 100,
+			"name": "DES_SUBCATEGORIA"
+		},
+		{
+			"order": 10,
+			"type": "VARCHAR(1000)",
+			"size": 20,
+			"name": "DES_MARCA"
+		},
+		{
+			"order": 11,
+			"type": "VARCHAR(1000)",
+			"size": 100,
+			"name": "DES_ACUMULACIONSUPERMERCADODICCIONARIO2"
+		},
+		{
+			"order": 12,
+			"type": "VARCHAR(100)",
+			"size": 20,
+			"name": "COD_PROVEEDOR"
+		},
+		{
+			"order": 13,
+			"type": "VARCHAR(1000)",
+			"size": 100,
+			"name": "DES_PROVEEDOR"
+		}
+	]
+}

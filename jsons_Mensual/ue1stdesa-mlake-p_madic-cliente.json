@@ -1,0 +1,74 @@
+{
+	"table_name": "M_DATOSADICIONALESCLIENTE",
+	"bucket_name": "ue1stgdesaas3ftp001",
+	"path": "RAW-SFTP/F685/Mayo2023",
+	"filename": "F685H6.TXT",
+	"data": [
+		{
+			"order": 1,
+			"type": "VARCHAR(100)",
+			"size": 10,
+			"name": "COD_PERSONATH"
+		},
+		{
+			"order": 2,
+			"type": "VARCHAR(100)",
+			"size": 6,
+			"name": "COD_POSICION"
+		},
+		{
+			"order": 3,
+			"type": "VARCHAR(1000)",
+			"size": 150,
+			"name": "DES_DIRECCION"
+		},
+		{
+			"order": 4,
+			"type": "VARCHAR(1000)",
+			"size": 25,
+			"name": "DES_DEPARTAMENTO"
+		},
+		{
+			"order": 5,
+			"type": "VARCHAR(1000)",
+			"size": 25,
+			"name": "DES_PROVINCIA"
+		},
+		{
+			"order": 6,
+			"type": "VARCHAR(1000)",
+			"size": 25,
+			"name": "DES_DISTRITO"
+		},
+		{
+			"order": 7,
+			"type": "VARCHAR(1000)",
+			"size": 150,
+			"name": "DES_REFERENCIA"
+		},
+		{
+			"order": 8,
+			"type": "INTEGER",
+			"size": 1,
+			"name": "FLG_ERROR"
+		},
+		{
+			"order": 9,
+			"type": "VARCHAR(1000)",
+			"size": 20,
+			"name": "DES_COORDDENADAX"
+		},
+		{
+			"order": 10,
+			"type": "VARCHAR(1000)",
+			"size": 20,
+			"name": "DES_COORDDENADAY"
+		},
+		{
+			"order": 11,
+			"type": "VARCHAR(1000)",
+			"size": 1,
+			"name": "DES_NSE"
+		}
+	]
+}

@@ -1,0 +1,29 @@
+DROP TABLE "trusted".t_canje;
+
+CREATE TABLE IF NOT EXISTS "trusted".t_canje
+(
+	cod_persona VARCHAR(100)   ENCODE lzo
+	,cod_cuenta VARCHAR(100)   ENCODE lzo
+	,des_estaciontrabajo VARCHAR(1000)   ENCODE lzo
+	,tip_canje VARCHAR(100)   ENCODE lzo
+	,num_tarjeta VARCHAR(100)   ENCODE lzo
+	,des_canjecadena VARCHAR(1000)   ENCODE lzo
+	,des_canjetienda VARCHAR(1000)   ENCODE lzo
+	,fec_transaccion TIMESTAMP WITHOUT TIME ZONE   ENCODE lzo
+	,feh_transaccion TIMESTAMP WITHOUT TIME ZONE   ENCODE lzo
+	,des_caja VARCHAR(1000)   ENCODE lzo
+	,num_secuencia BIGINT   ENCODE lzo
+	,cod_cajeracencosud VARCHAR(100)   ENCODE lzo
+	,imp_solespagados NUMERIC(15,2)   ENCODE lzo
+	,num_puntoscanjeados NUMERIC(15,2)   ENCODE lzo
+	,num_puntosantescanje NUMERIC(15,2)   ENCODE lzo
+	,cod_personath VARCHAR(100)   ENCODE lzo
+	,des_estadocanje VARCHAR(1000)   ENCODE lzo
+	,cod_canje VARCHAR(100)   ENCODE lzo
+)
+<<Error - UNKNOWN DISTSTYLE>>
+;
+
+GRANT SELECT on "trusted".t_canje to redshift_user;
+
+COMMIT;

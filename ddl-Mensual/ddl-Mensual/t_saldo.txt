@@ -1,0 +1,15 @@
+DROP TABLE "trusted".t_saldo;
+
+CREATE TABLE IF NOT EXISTS "trusted".t_saldo
+(
+	cod_persona VARCHAR(100)   ENCODE lzo
+	,cod_cuenta VARCHAR(100)   ENCODE lzo
+	,num_saldopuntos BIGINT   ENCODE az64
+	,des_signo VARCHAR(1000)   ENCODE lzo
+)
+<<Error - UNKNOWN DISTSTYLE>>
+;
+
+GRANT SELECT on "trusted".t_saldo to redshift_user;
+
+COMMIT;

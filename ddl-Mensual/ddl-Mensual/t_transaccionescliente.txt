@@ -1,0 +1,90 @@
+DROP TABLE "trusted".t_transaccionescliente;
+
+CREATE TABLE IF NOT EXISTS "trusted".t_transaccionescliente
+(
+	cod_persona VARCHAR(1000)   ENCODE lzo
+	,num_tarjeta VARCHAR(1000)   ENCODE lzo
+	,tip_cliente VARCHAR(1000)   ENCODE lzo
+	,cod_tip_persona VARCHAR(1000)   ENCODE lzo
+	,des_sexo VARCHAR(1000)   ENCODE bytedict
+	,fec_nacimiento VARCHAR(1000)   ENCODE lzo
+	,num_edad INTEGER   ENCODE az64
+	,des_rangoedad VARCHAR(1000)   ENCODE bytedict
+	,des_nombre_corto VARCHAR(1000)   ENCODE lzo
+	,cod_estado_civil VARCHAR(1000)   ENCODE bytedict
+	,num_dependientes INTEGER   ENCODE az64
+	,cod_nivel_educacion VARCHAR(1000)   ENCODE lzo
+	,cod_situacion_laboral VARCHAR(1000)   ENCODE bytedict
+	,flg_tiene_hijos INTEGER   ENCODE az64
+	,flg_tiene_autos INTEGER   ENCODE az64
+	,flg_tiene_tarjeta_c INTEGER   ENCODE az64
+	,flg_tiene_telefono INTEGER   ENCODE az64
+	,flg_tiene_correo INTEGER   ENCODE az64
+	,flg_tiene_conyugue INTEGER   ENCODE az64
+	,flg_direccion_registrada INTEGER   ENCODE az64
+	,flg_tiene_tarjeta_l INTEGER   ENCODE az64
+	,flg_datos_errados INTEGER   ENCODE az64
+	,des_estado_registro INTEGER   ENCODE az64
+	,fec_creacion VARCHAR(1000)   ENCODE lzo
+	,feh_creacion VARCHAR(1000)   ENCODE lzo
+	,nom_usuario_creacion VARCHAR(1000)   ENCODE lzo
+	,fec_ult_modificacion VARCHAR(1000)   ENCODE lzo
+	,feh_ult_modificacion VARCHAR(1000)   ENCODE lzo
+	,nom_usuario_ultima_modificacion VARCHAR(1000)   ENCODE lzo
+	,des_tercer_nombre VARCHAR(1000)   ENCODE lzo
+	,num_saldo_disponible NUMERIC(15,2)   ENCODE az64
+	,num_saldo_contable NUMERIC(15,2)   ENCODE az64
+	,flg_direccion_errada VARCHAR(1000)   ENCODE lzo
+	,des_cod_postal VARCHAR(1000)   ENCODE bytedict
+	,des_distrito VARCHAR(1000)   ENCODE lzo
+	,des_provincia VARCHAR(1000)   ENCODE lzo
+	,des_departamento VARCHAR(1000)   ENCODE lzo
+	,des_tipo VARCHAR(1000)   ENCODE lzo
+	,flg_direccion_error VARCHAR(1000)   ENCODE lzo
+	,flg_desea_email VARCHAR(1000)   ENCODE lzo
+	,flg_diccio VARCHAR(1000)   ENCODE lzo
+	,des_prefijo_1 VARCHAR(1000)   ENCODE bytedict
+	,num_telefono_1 VARCHAR(1000)   ENCODE lzo
+	,flg_telef_no_desea_1 VARCHAR(1000)   ENCODE bytedict
+	,des_prefijo_2 VARCHAR(1000)   ENCODE lzo
+	,num_telefono_2 VARCHAR(1000)   ENCODE lzo
+	,flg_telef_no_desea_2 VARCHAR(1000)   ENCODE bytedict
+	,des_prefijo_3 VARCHAR(1000)   ENCODE lzo
+	,num_telefono_3 VARCHAR(1000)   ENCODE lzo
+	,flg_telef_no_desea_3 VARCHAR(1000)   ENCODE lzo
+	,des_prefijo_4 VARCHAR(1000)   ENCODE lzo
+	,num_telefono_4 VARCHAR(1000)   ENCODE lzo
+	,flg_telef_no_desea_4 VARCHAR(1000)   ENCODE lzo
+	,des_prefijo_5 VARCHAR(1000)   ENCODE lzo
+	,num_telefono_5 VARCHAR(1000)   ENCODE lzo
+	,flg_telef_no_desea_5 VARCHAR(1000)   ENCODE lzo
+	,des_email_1 VARCHAR(1000)   ENCODE lzo
+	,flg_email_no_desea_1 VARCHAR(1000)   ENCODE lzo
+	,des_email_2 VARCHAR(1000)   ENCODE lzo
+	,flg_email_no_desea_2 VARCHAR(1000)   ENCODE lzo
+	,des_email_3 VARCHAR(1000)   ENCODE lzo
+	,flg_email_no_desea_3 VARCHAR(1000)   ENCODE lzo
+	,des_email_4 VARCHAR(1000)   ENCODE lzo
+	,flg_email_no_desea_4 VARCHAR(1000)   ENCODE lzo
+	,des_email_5 VARCHAR(1000)   ENCODE lzo
+	,flg_email_no_desea_5 VARCHAR(1000)   ENCODE lzo
+	,des_coordenaday VARCHAR(1000)   ENCODE lzo
+	,des_coordenadax VARCHAR(1000)   ENCODE lzo
+	,des_nse VARCHAR(1000)   ENCODE bytedict
+	,des_rango_edad VARCHAR(1000)   ENCODE bytedict
+	,flg_sistema_financiero VARCHAR(1000)   ENCODE lzo
+	,flg_01 INTEGER   ENCODE az64
+	,flg_02 INTEGER   ENCODE az64
+	,flg_03 INTEGER   ENCODE az64
+	,flg_04 INTEGER   ENCODE az64
+	,flg_05 INTEGER   ENCODE az64
+	,flg_06 INTEGER   ENCODE az64
+	,flg_07 INTEGER   ENCODE az64
+	,flg_08 INTEGER   ENCODE az64
+	,flg_09 INTEGER   ENCODE az64
+	,flg_10 INTEGER   ENCODE az64
+)
+<<Error - UNKNOWN DISTSTYLE>>
+;
+
+COMMIT;

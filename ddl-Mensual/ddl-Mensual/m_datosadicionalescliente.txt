@@ -1,0 +1,22 @@
+DROP TABLE "trusted".m_datosadicionalescliente;
+
+CREATE TABLE IF NOT EXISTS "trusted".m_datosadicionalescliente
+(
+	cod_personath VARCHAR(100)   ENCODE lzo
+	,cod_posicion VARCHAR(100)   ENCODE lzo
+	,des_direccion VARCHAR(1000)   ENCODE lzo
+	,des_departamento VARCHAR(1000)   ENCODE lzo
+	,des_provincia VARCHAR(1000)   ENCODE lzo
+	,des_distrito VARCHAR(1000)   ENCODE lzo
+	,des_referencia VARCHAR(1000)   ENCODE lzo
+	,flg_error INTEGER   ENCODE lzo
+	,des_coorddenadax VARCHAR(1000)   ENCODE lzo
+	,des_coorddenaday VARCHAR(1000)   ENCODE lzo
+	,des_nse VARCHAR(1000)   ENCODE lzo
+)
+<<Error - UNKNOWN DISTSTYLE>>
+;
+
+GRANT SELECT on "trusted".m_datosadicionalescliente to redshift_user;
+
+COMMIT;

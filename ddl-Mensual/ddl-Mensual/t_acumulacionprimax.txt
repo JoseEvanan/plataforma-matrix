@@ -1,0 +1,18 @@
+DROP TABLE "trusted".t_acumulacionprimax;
+
+CREATE TABLE IF NOT EXISTS "trusted".t_acumulacionprimax
+(
+	id_acumulacion VARCHAR(100)   ENCODE lzo
+	,num_seccuencial BIGINT   ENCODE lzo
+	,cod_productoprimax VARCHAR(100)   ENCODE lzo
+	,des_acumulacionprimax VARCHAR(1000)   ENCODE lzo
+	,can_acumulacion NUMERIC(8,3)   ENCODE lzo
+	,des_signo VARCHAR(1000)   ENCODE lzo
+	,imp_solesproducto NUMERIC(15,2)   ENCODE lzo
+)
+<<Error - UNKNOWN DISTSTYLE>>
+;
+
+GRANT SELECT on "trusted".t_acumulacionprimax to redshift_user;
+
+COMMIT;

@@ -1,0 +1,40 @@
+DROP TABLE "trusted".m_cliente;
+
+CREATE TABLE IF NOT EXISTS "trusted".m_cliente
+(
+	cod_personath VARCHAR(65535)   ENCODE lzo
+	,tip_persona VARCHAR(65535)   ENCODE lzo
+	,des_tipopersona VARCHAR(65535)   ENCODE lzo
+	,tip_documentoidentidad VARCHAR(65535)   ENCODE lzo
+	,des_documentoidentidad VARCHAR(65535)   ENCODE lzo
+	,flg_documentoidentidad INTEGER   ENCODE az64
+	,flg_ruc INTEGER   ENCODE az64
+	,des_nombre VARCHAR(65535)   ENCODE lzo
+	,des_apepaterno VARCHAR(65535)   ENCODE lzo
+	,des_apematerno VARCHAR(65535)   ENCODE lzo
+	,fec_nacimiento TIMESTAMP WITHOUT TIME ZONE   ENCODE az64
+	,can_edad INTEGER   ENCODE az64
+	,tip_sexo VARCHAR(65535)   ENCODE lzo
+	,tip_estadocivil VARCHAR(65535)   ENCODE lzo
+	,flg_tenenciahijos INTEGER   ENCODE az64
+	,flg_telefonofijo INTEGER   ENCODE az64
+	,flg_telefonocelular INTEGER   ENCODE az64
+	,flg_consentimientollamada INTEGER   ENCODE az64
+	,flg_correo INTEGER   ENCODE az64
+	,flg_consentimientoemail INTEGER   ENCODE az64
+	,flg_direccion INTEGER   ENCODE az64
+	,flg_direccionerror INTEGER   ENCODE az64
+	,flg_direcciongps INTEGER   ENCODE az64
+	,tip_nivelsocioeconomico VARCHAR(65535)   ENCODE lzo
+	,fec_afiliacion TIMESTAMP WITHOUT TIME ZONE   ENCODE az64
+	,des_afiliacioncadena VARCHAR(65535)   ENCODE lzo
+	,fec_creacion TIMESTAMP WITHOUT TIME ZONE   ENCODE az64
+	,fec_ultimamodificacion TIMESTAMP WITHOUT TIME ZONE   ENCODE az64
+	,flg_autorizacompartirdatosocio INTEGER   ENCODE az64
+	,flg_clientefallecido INTEGER   ENCODE az64
+	,flg_autocanje INTEGER   ENCODE az64
+)
+DISTSTYLE EVEN
+;
+
+COMMIT;

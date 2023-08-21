@@ -1,0 +1,41 @@
+DROP TABLE "trusted".t_acumulacionsupermercados;
+
+CREATE TABLE IF NOT EXISTS "trusted".t_acumulacionsupermercados
+(
+	des_acumulacioncadena VARCHAR(1000)   ENCODE lzo
+	,des_acumulaciontienda VARCHAR(1000)   ENCODE lzo
+	,cod_tarjeta VARCHAR(100)   ENCODE lzo
+	,cod_personath VARCHAR(100)   ENCODE lzo
+	,fec_transaccion TIMESTAMP WITHOUT TIME ZONE   ENCODE lzo
+	,feh_transaccion TIMESTAMP WITHOUT TIME ZONE   ENCODE lzo
+	,num_caja BIGINT   ENCODE lzo
+	,num_secuenciacaja BIGINT   ENCODE lzo
+	,imp_solespagados NUMERIC(8,2)   ENCODE lzo
+	,des_signo VARCHAR(1000)   ENCODE lzo
+	,num_puntosacumulados BIGINT   ENCODE lzo
+	,des_signo1 VARCHAR(1000)   ENCODE lzo
+	,cod_promocion VARCHAR(100)   ENCODE lzo
+	,cod_canal VARCHAR(100)   ENCODE lzo
+	,des_acumulacionsupermercados VARCHAR(1000)   ENCODE lzo
+	,cod_cajera VARCHAR(100)   ENCODE lzo
+	,tip_formapago VARCHAR(100)   ENCODE lzo
+	,des_acumulacionsupermercados2 VARCHAR(1000)   ENCODE lzo
+	,num_ruc BIGINT   ENCODE lzo
+	,des_secuenciadetalle VARCHAR(1000)   ENCODE lzo
+	,cod_articulo VARCHAR(100)   ENCODE lzo
+	,can_acumulacionsupermercados NUMERIC(8,3)   ENCODE lzo
+	,des_signo2 VARCHAR(1000)   ENCODE lzo
+	,imp_preciounitario NUMERIC(8,2)   ENCODE lzo
+	,des_signo3 VARCHAR(1000)   ENCODE lzo
+	,imp_descuento NUMERIC(8,2)   ENCODE lzo
+	,des_signo4 VARCHAR(1000)   ENCODE lzo
+	,cod_formapago VARCHAR(100)   ENCODE lzo
+	,des_acumulacionsupermercados3 VARCHAR(1000)   ENCODE lzo
+	,num_puntoscanjeados BIGINT   ENCODE lzo
+)
+<<Error - UNKNOWN DISTSTYLE>>
+;
+
+GRANT SELECT on "trusted".t_acumulacionsupermercados to redshift_user;
+
+COMMIT;
