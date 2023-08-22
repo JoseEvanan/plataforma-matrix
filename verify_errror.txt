@@ -1,0 +1,1 @@
+Select * From stl_load_errors

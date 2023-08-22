@@ -4,6 +4,8 @@
         "bucket_name": "ue1stgdesaas3ftp001",
         "path": "RAW-SFTP/F685/Mayo2023",
         "filename": "F685I_A.TXT,F685I_B.TXT,F685I_C.TXT,F685I_D.TXT,F685I_E.TXT,F685I_F.TXT",
+        "procces": "FULL",
+        "pks": "",
         "type_file": "txt",
         "table_name_dir": "CLTESDTM",
         "data": [
@@ -50,6 +52,8 @@
         "bucket_name": "ue1stgdesaas3ftp001",
         "path": "RAW-SFTP/F685/Enero2023",
         "filename": "F685M.zip",
+        "procces": "FULL",
+        "pks": "",
         "type_file": "txt",
         "table_name_dir": "TEST01",
         "data": [
@@ -138,6 +142,8 @@
         "bucket_name": "ue1stgdesaas3ftp001",
         "path": "RAW-SFTP/F685/Mayo2023",
         "filename": "F685A.TXT",
+        "procces": "FULL",
+        "pks": "",
         "type_file": "txt",
         "table_name_dir": "CODPROMO",
         "data": [
@@ -160,6 +166,8 @@
         "bucket_name": "ue1stgdesaas3ftp001",
         "path": "RAW-SFTP/F685/Mayo2023",
         "filename": "F685H6.TXT",
+        "procces": "FULL",
+        "pks": "",
         "type_file": "txt",
         "table_name_dir": "CLTESDIR",
         "data": [
@@ -236,7 +244,7 @@
         "bucket_name": "ue1stgdesaas3ftp001",
         "path": "RAW-SFTP/F685/Mayo2023",
         "filename": "F685H.TXT",
-        "is_merge": true,
+        "procces": "FULL",
         "pks": "COD_PERSONATH",
         "type_file": "txt",
         "table_name_dir": "CLTESDAT",
@@ -434,6 +442,8 @@
         "bucket_name": "ue1stgdesaas3ftp001",
         "path": "RAW-SFTP/F685/Mayo2023/",
         "filename": "F685D.TXT",
+        "procces": "FULL",
+        "pks": "",
         "type_file": "txt",
         "table_name_dir": "TMUNFIN",
         "data": [
@@ -564,6 +574,8 @@
         "bucket_name": "ue1stgdesaas3ftp001",
         "path": "RAW-SFTP/F685/Mayo2023",
         "filename": "F685F.TXT",
+        "procces": "FULL",
+        "pks": "",
         "type_file": "txt",
         "table_name_dir": "PTOSVTA",
         "data": [
@@ -634,6 +646,8 @@
         "bucket_name": "ue1stgdesaas3ftp001",
         "path": "RAW-SFTP/F685/Mayo2023",
         "filename": "F685G.TXT",
+        "procces": "FULL",
+        "pks": "",
         "type_file": "txt",
         "table_name_dir": "CLTESTRJ",
         "data": [
@@ -728,6 +742,8 @@
         "bucket_name": "ue1stgdesaas3ftp001",
         "path": "RAW-SFTP/F685/Mayo2023",
         "filename": "F685_1.TXT,F685_2.TXT,F685_3.TXT,F685_4.TXT,F685_5.TXT,F685_6.TXT,F685_7.TXT,F685_A.TXT,F685_B.TXT,F685_C.TXT,F685_D.TXT,F685_E.TXT,F685_F.TXT,F685_G.TXT,F685_H.TXT,F685_I.TXT,F685_J.TXT,F685_K.TXT,F685_L.TXT,F685_M.TXT,F685_N.TXT,F685_O.TXT,F685_P.TXT,F685_Q.TXT,F685_R.TXT,F685_S.TXT,F685_T.TXT,F685_U.TXT,F685_V.TXT,F685_W.TXT,F685_X.TXT,F685_Y.TXT,F685_Z.TXT",
+        "procces": "FULL",
+        "pks": "",
         "type_file": "txt",
         "table_name_dir": "TACUCAB",
         "data": [
@@ -846,6 +862,8 @@
         "bucket_name": "ue1stgdesaas3ftp001",
         "path": "RAW-SFTP/F685/Mayo2023",
         "filename": "F685K_A.TXT,F685K_B.TXT,F685K_C.TXT,F685K_D.TXT,F685K_E.TXT,F685K_F.TXT",
+        "procces": "FULL",
+        "pks": "",
         "type_file": "txt",
         "table_name_dir": "TACUDETD",
         "data": [
@@ -952,6 +970,8 @@
         "bucket_name": "ue1stgdesaas3ftp001",
         "path": "RAW-SFTP/F685/Mayo2023",
         "filename": "F685B_A.TXT,F685B_B.TXT,F685B_C.TXT,F685B_D.TXT,F685B_E.TXT,F685B_F.TXT,F685B_G.TXT",
+        "procces": "FULL",
+        "pks": "",
         "type_file": "txt",
         "table_name_dir": "TACUDETP",
         "data": [
@@ -1004,6 +1024,8 @@
         "bucket_name": "ue1stgdesaas3ftp001",
         "path": "RAW-SFTP/F685/Mayo2023",
         "filename": "F685L_A.TXT,F685L_B.TXT,F685L_C.TXT,F685L_D.TXT,F685L_E.TXT,F685L_F.TXT,F685L_G.TXT,F685L_H.TXT,F685L_I.TXT,F685L_J.TXT,F685L_K.TXT,F685L_L.TXT,F685L_M.TXT,F685L_N.TXT,F685L_O.TXT,F685L_P.TXT,F685L_Q.TXT,F685L_R.TXT,F685L_S.TXT,F685L_T.TXT,F685L_U.TXT,F685L_V.TXT,F685L_W.TXT,F685L_X.TXT,F685L_Y.TXT,F685L_Z.TXT",
+        "procces": "FULL",
+        "pks": "",
         "type_file": "txt",
         "table_name_dir": "TEST02",
         "data": [
@@ -1194,6 +1216,8 @@
         "bucket_name": "ue1stgdesaas3ftp001",
         "path": "RAW-SFTP/F685/Mayo2023",
         "filename": "F685C.TXT",
+        "procces": "FULL",
+        "pks": "",
         "type_file": "txt",
         "table_name_dir": "TCANCAB",
         "data": [
@@ -1312,6 +1336,8 @@
         "bucket_name": "ue1stgdesaas3ftp001",
         "path": "RAW-SFTP/F685/Mayo2023",
         "filename": "F685C1_A.TXT,F685C1_B.TXT",
+        "procces": "FULL",
+        "pks": "",
         "type_file": "txt",
         "table_name_dir": "TCANDET",
         "data": [
@@ -1412,6 +1438,8 @@
         "bucket_name": "ue1stgdesaas3ftp001",
         "path": "RAW-SFTP/F685/Mayo2023",
         "filename": "F685J.TXT",
+        "procces": "FULL",
+        "pks": "",
         "type_file": "txt",
         "table_name_dir": "CLTESREC",
         "data": [
@@ -1524,9 +1552,9 @@
         "bucket_name": "ue1stgdesaas3ftp001",
         "path": "RAW-SFTP/F685/Mayo2023",
         "filename": "F685E3.TXT",
-        "type_file": "txt",
-        "is_merge": true,
+        "procces": "FULL",
         "pks": "COD_PERSONA,COD_CUENTA",
+        "type_file": "txt",
         "table_name_dir": "CLTESSAL",
         "data": [
             {
@@ -1560,6 +1588,8 @@
         "bucket_name": "ue1stgdesaas3ftp001",
         "path": "RAW-SFTP/F685/Abril2023",
         "filename": "F549A_01.TXT,F549A_02.TXT,F549A_03.TXT,F549A_04.TXT,F549A_05.TXT,F549A_06.TXT,F549A_07.TXT,F549A_08.TXT,F549A_09.TXT,F549A_10.TXT,F549A_11.TXT,F549A_12.TXT,F549A_13.TXT,F549A_14.TXT,F549A_15.TXT,F549A_16.TXT,F549A_17.TXT,F549A_18.TXT,F549A_19.TXT,F549A_20.TXT,F549A_21.TXT,F549A_22.TXT,F549A_23.TXT,F549A_24.TXT,F549A_25.TXT,F549A_26.TXT,F549A_27.TXT,F549A_28.TXT,F549A_29.TXT,F549A_30.TXT",
+        "procces": "FULL",
+        "pks": "",
         "type_file": "txt",
         "table_name_dir": "CLTESDDA",
         "data": [
