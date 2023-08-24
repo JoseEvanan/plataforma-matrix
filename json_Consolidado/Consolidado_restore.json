@@ -1,0 +1,22 @@
+{
+    "tables": [
+        "T_LOGACTUALIZACION",
+        "M_ACUMULACIONSUPERMERCADOSDICCIONARIO",
+        "M_ACUMULACION",
+        "M_DATOSADICIONALESCLIENTE",
+        "M_CLIENTE",
+        "M_MOVIMIENTOFINANCIERO",
+        "M_PUNTOVENTA",
+        "M_TARJETA",
+        "T_ACUMULACION",
+        "T_ACUMULACIONDELOSI",
+        "T_ACUMULACIONPRIMAX",
+        "T_ACUMULACIONSUPERMERCADOS",
+        "T_CANJE",
+        "T_DETALLECANJE",
+        "T_RECLAMOS",
+        "T_SALDO",
+        "T_TRANSACCIONESCLIENTE"
+    ],
+    "procces": "BACKUP"
+}

@@ -4,3 +4,6 @@
         FORMAT AS PARQUET
         ALLOWOVERWRITE
         maxfilesize 512 mb;
+
+
+arn:aws:iam::198328445529:role/service-role/AmazonRedshift-CommandsAccessRole-20221129T004338

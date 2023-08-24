@@ -87,7 +87,7 @@ def get_df_data(df, fields):
             name_tmp  = field['name'].lower()+ "_tmp"
             df = df.withColumn(name_tmp, substring('value', init    ,     field['size']))
             #df1 = df1.withColumn(name_tmp, to_timestamp(substring('value', init    ,     field['size']),'yyyyMMdd'))
-            df = df.withColumn(field['name'].lower(), when(df1[name_tmp] ==     "1"    ,True).when(df1[name_tmp]  == "0",False))#.otherwise(df    .gender))
+            df = df.withColumn(field['name'].lower(), when(df[name_tmp] ==     "1"    ,True).when(df[name_tmp]  == "0",False))#.otherwise(df    .gender))
             df = df.drop(name_tmp)
         elif field['type'] == 'INTEGER' or field['type'] == 'BIGINT': 
             df = df.withColumn(field['name'].lower(), substring('value', init    ,     field['size']).cast("Integer"))
@@ -99,7 +99,7 @@ def get_df_data(df, fields):
             df = df.withColumn(name_tmp, substring('value', init , field['size']-precision))
             df = df.withColumn(name_tmp2, substring('value', init+ field['size']- precision, precision))
             
-            df = df.withColumn(field['name'].lower(), concat_ws(".",df1[name_tmp],df1[name_tmp2]).cast("Float"))
+            df = df.withColumn(field['name'].lower(), concat_ws(".",df[name_tmp],df[name_tmp2]).cast("Float"))
             df = df.drop(name_tmp)
             df = df.drop(name_tmp2)
             #df1 = df1.withColumn(field['name'].lower(), substring('value', init    ,     field['size']))
@@ -169,7 +169,9 @@ procces = config_table["procces"]
 pks = config_table["pks"]
 
 
-path_base = 's3://ue1stgdesaas3ftp001/RAW-SFTP/F685/Julio2023/MATRIX'
+bucket = 'ue1stgdesaas3ftp001'
+prefix_dir = "RAW-SFTP/F685/Julio2023/MATRIX"
+path_base = f's3://{bucket}/{prefix_dir}'
 if procces == 'FULL':
     path = f'{path_base}/{table_name_dir}/FULL/'
     df_full = spark.read.option("encoding", "ISO-8859-1").text(path)
@@ -189,7 +191,25 @@ if procces == 'FULL':
 elif procces == 'DELTA':
     d = (datetime.today() - timedelta(hours=5))  - timedelta(days=1) # NOTA,  revisar horario de ejecucion
     prefix = d.strftime("%Y%m%d")
+    prefix_file = f'{prefix_dir}/{table_name_dir}/DELTA/{prefix}.TXT'
+
     path = f'{path_base}/{table_name_dir}/DELTA/{prefix}.TXT'
+    
+    import boto3
+    import botocore
+    from botocore.errorfactory import ClientError
+
+    s3 = boto3.client('s3')
+    try:
+        s3.head_object(Bucket=bucket, Key=prefix_file)
+    except botocore.exceptions.ClientError as e:
+        if e.response['Error']['Code'] == "404":
+            # The key does not exist.
+            raise (f"No existe actualizacion para {path}")
+        else:
+            raise ("Error en la ingesta")
+
+
     #Validar si no hay cambios
     df_delta_day = spark.read.option("encoding", "ISO-8859-1").text(path)
     df_delta_day = get_df_data(df_delta_day, fields)

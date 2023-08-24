@@ -9,7 +9,7 @@ from awsglue.utils import getResolvedOptions
 
 args = getResolvedOptions(
     sys.argv,
-    ['CONFIG_TABLE'])
+    ['CONFIG_TABLE', 'PROCCES'])
 
 
 for k, v in args.items():  # instance global variables
@@ -17,6 +17,7 @@ for k, v in args.items():  # instance global variables
 
 
 def_table = args['CONFIG_TABLE']
+procces = args['PROCCES'] # backup - restore
 #custom config by table
 config_table = json.loads(def_table)
 
@@ -80,7 +81,7 @@ def get_redshift_connection(DB_HOST,DB_PORT,DB_NAME,DB_USER,DB_PWD):
 
 
 
-def ini(config_main, config_table):
+def ini(config_main, config_table, procces):
     #REDSHIFT
     db_host = config_main['DB_HOST']
     db_port = config_main['DB_PORT']
@@ -104,7 +105,8 @@ def ini(config_main, config_table):
 
     conn = get_redshift_connection(db_host,db_port,db_name,db_user,db_pwd)
 
-    unload_sql = f"""
+    if procces == 'BACKUP':
+        query_procces = f"""
                 unload ('select * from {schema_redshift}.{name_table}')
             to 's3://ue1stgdesaas3mat005/BACKUP/{date_str}/{name_table}/'
             iam_role '{iam_redshift}'
@@ -112,9 +114,19 @@ def ini(config_main, config_table):
             ALLOWOVERWRITE
             maxfilesize 512 mb;
                 """
-    conn.query(unload_sql)#JOSE
+    elif procces == 'RESTORE':
+        query_procces = f"""
+                    COPY {schema_redshift}.{name_table}
+                        FROM 's3://ue1stgdesaas3mat005/BACKUP/{date_str}/{name_table}/'
+                        IAM_ROLE '{iam_redshift}'
+                        FORMAT AS PARQUET;
+                """
+    else:
+        raise  ("Proceso no conocido")
+    
+    conn.query(query_procces)#JOSE
 
-ini(config_main, config_table)
+ini(config_main, config_table, procces)
 
 #s3://ue1stgdesaas3mat005/PLUGINS/req14-0.1-py3.6.egg
 #https://ue1stgdesaas3mat005.s3.amazonaws.com/PLUGINS/req14-0.1-py3.6.egg
