@@ -106,7 +106,7 @@ def get_df_data(df, fields,procces):
             df = df.withColumn(field['name'].lower(), substring('value', init    ,     field['size']))
         init = init + field['size']        
     df = df.drop("value")
-
+    df = df.dropna()#Tiene 1 registor en blanco cada archivo
     if procces =='FULL':
         date_file_load = get_datetime_file(bucket, path_key_load01)
 
@@ -115,7 +115,7 @@ def get_df_data(df, fields,procces):
         df = df.withColumn("fec_proc_matrix", F.to_date(F.lit(date_file_load), "yyyyMMdd")) 
         df = df.withColumn('load_user_matrix', F.lit("matrix-full-delta"))
     else:
-        df = df.dropna()#Tiene 1 registor en blanco cada archivo
+        
         
         df = df.withColumn('filename_matrix', F.input_file_name())
         df = df.withColumn("split_col_path", F.split(F.col("filename_matrix"), "/")) \
@@ -362,7 +362,7 @@ elif procces == 'FULL-DELTA':
     
     print("Count DELTA ", df_delta_all.count())
 
-    if len(pks.split(","))>=1:
+    if len(pks.split(","))>=1 and pks != "":
         #Redshift
         print("CON PKS")
 
