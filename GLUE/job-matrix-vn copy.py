@@ -8,7 +8,6 @@ from pyspark import SparkConf
 from awsglue.job import Job
 from pyspark.sql import functions as F
 
-
 from zipfile import ZipFile
 import pandas as pd
 from datetime import datetime, timedelta
@@ -19,7 +18,7 @@ import operator
 import io
 
 ## @params: [JOB_NAME]
-args = getResolvedOptions(sys.argv, ['JOB_NAME','CONFIG_TABLE','FILE_PROCCES'])
+args = getResolvedOptions(sys.argv, ['JOB_NAME','CONFIG_TABLE'])
 
 myconfig=SparkConf().set('spark.rpc.message.maxSize','1024').set('spark.driver.memory','9g') 
 #we modified config of spark, because we have problem with big files.
@@ -34,8 +33,6 @@ job = Job(glueContext)
 
 
 def_table = args['CONFIG_TABLE']
-print("FILE_PROCCES", args['FILE_PROCCES'])
-
 #custom config by table
 config_table = json.loads(def_table)
 
@@ -73,9 +70,14 @@ secret = get_secret_value_response['SecretString']
 config_main = json.loads(secret)
 bucket_name = "ue1stgdesaas3ftp001"
 
+if type(config_table["filename"]) == type([]):
+    pass
+else:
+    list_files=config_table["filename"].split(',')
+    config_table["filename"] = [config_table["filename"]]
 
 ####### FUNCTIONS
-def get_df_data(df, fields,procces):
+def get_df_data(df, fields):
     init = 1
     #Cast data type
     for field in fields:
@@ -106,36 +108,13 @@ def get_df_data(df, fields,procces):
             df = df.withColumn(field['name'].lower(), substring('value', init    ,     field['size']))
         init = init + field['size']        
     df = df.drop("value")
-
-    if procces =='FULL':
-        date_file_load = get_datetime_file(bucket, path_key_load01)
-
-
-        df = df.withColumn('filename_matrix', F.input_file_name())
-        df = df.withColumn("fec_proc_matrix", F.to_date(F.lit(date_file_load), "yyyyMMdd")) 
-        df = df.withColumn('load_user_matrix', F.lit("matrix-full-delta"))
-    else:
-        df = df.dropna()#Tiene 1 registor en blanco cada archivo
-        
-        df = df.withColumn('filename_matrix', F.input_file_name())
-        df = df.withColumn("split_col_path", F.split(F.col("filename_matrix"), "/")) \
-                            .withColumn("filename_matrix_tmp", F.col("split_col_path").getItem(F.size(F.col("split_col_path"))-1)) \
-                            .withColumn("split_file_tmp", F.split(F.col("filename_matrix_tmp"), "\.")) \
-                            .withColumn("fec_load_proc_tmp", F.col("split_file_tmp").getItem(0))
-        
-        df = df.withColumn("fec_proc_matrix", F.to_date(F.col("fec_load_proc_tmp"), "yyyyMMdd")) 
-        df = df.withColumn('load_user_matrix', F.lit("matrix-full-delta"))
-        
-        df = df.drop("split_col_path","split_file_tmp","fec_load_proc_tmp","filename_matrix_tmp")
-
+    df.withColumn('filename', F.input_file_name())
     return df 
 
 def get_script_merge(config_table):
     values_ = config_table
 
     table_name = values_['table_name']
-    table_name_cdc = values_['table_name_cdc']
-    schema = values_['schema']
 
     ddl = values_['data']
     fields_pks = ','.join(
@@ -152,7 +131,6 @@ def get_script_merge(config_table):
     text_insert_value = ' , '.join(map(lambda x: f"B.{x}", fields))
 
     text_merge = f"""
-
             MERGE INTO {table_name} A 
             using {table_name}__cdc B 
             ON ( {fields_pks} ) 
@@ -163,47 +141,6 @@ def get_script_merge(config_table):
                 VALUES ({text_insert_head});
         """
     return text_merge
-
-def get_script_procces(config_table):
-
-    
-    values_ = config_table
-
-    table_full_redshift = values_["table_full_redshift"] 
-    table_delta_redshift = values_["table_delta_redshift"]
-
-    ddl = values_['data']
-
-    fields = list(map(lambda x: x['name'], ddl))
-
-
-    text_insert_head = ' , '.join(fields)
-    text_insert_head = text_insert_head +", filename_matrix, fec_proc_matrix, load_user_matrix"
-    text_pk = values_['pks'].strip()
-
-    text_merge = f"""
-          
-            DELETE FROM {table_full_redshift}
-            WHERE {text_pk} in ( SELECT distinct {text_pk}
-            FROM  {table_delta_redshift});
-            INSERT INTO {table_full_redshift} ({text_insert_head}) SELECT {text_insert_head} 
-                    FROM  (
-                        SELECT d.*, ROW_NUMBER() OVER(PARTITION BY d.{text_pk} ORDER BY d.fec_proc_matrix DESC) AS row_num
-                        FROM {table_delta_redshift} d
-                        )
-                    WHERE row_num = 1; 
-            DROP TABLE IF EXISTS {table_delta_redshift}
-         """
-    print("text_merge ", text_merge)
-    return text_merge
-
-def get_datetime_file(bucket, path_key):
-    client = boto3.client('s3')
-    
-    obj = client.get_object(Bucket=bucket, Key=path_key)
-    date_file_load = obj.get('LastModified').strftime("%Y%m%d")
-    print(type(date_file_load),date_file_load)
-    return date_file_load
 
 #######################
 #REDSHIFT
@@ -224,7 +161,6 @@ schema_redshift = "test"
 #######################
 
 
-
 fields = config_table["data"]
 table_name_dir = config_table["table_name_dir"]
 name_table = config_table["table_name"].lower()
@@ -232,37 +168,15 @@ type_file = config_table["type_file"]
 procces = config_table["procces"]
 pks = config_table["pks"]
 
-#config_table["schema"] = schema_redshift
-config_table["table_full_redshift"]  = "{0}.{1}".format(schema_redshift, name_table)
-config_table["table_delta_redshift"]  = "{0}.{1}__cdc".format(schema_redshift, name_table)
 
 bucket = 'ue1stgdesaas3ftp001'
 prefix_dir = "RAW-SFTP/F685/Julio2023/MATRIX"
-prefix_dir = "RAW-SFTP/MATRIX"
-#RAW-SFTP/MATRIX/CLTESDAT/FULL/
 path_base = f's3://{bucket}/{prefix_dir}'
-
-    
-path_full = f'{path_base}/{table_name_dir}/FULL/'
-path_key_load01 = f'{prefix_dir}/{table_name_dir}/FULL/LOAD001.TXT' # key first LOAD
-
-path_delta = f'{path_base}/{table_name_dir}/DELTA/' 
-
-
-d = (datetime.today() - timedelta(hours=5))  - timedelta(days=1) # NOTA,  revisar horario de ejecucion
-prefix = d.strftime("%Y%m%d")
-
-print("Procces",procces)
 if procces == 'FULL':
     path = f'{path_base}/{table_name_dir}/FULL/'
     df_full = spark.read.option("encoding", "ISO-8859-1").text(path)
     
     df_full = get_df_data(df_full, fields)
-
-
-    df_full = df_full.withColumn('fec_load_proc', F.lit(prefix))
-    df_full = df_full.withColumn('load_user', F.lit("matrix"))
-    
     #Redshift
     table_redshift = "{0}.{1}".format(schema_redshift, name_table)
     df_full.write \
@@ -275,11 +189,12 @@ if procces == 'FULL':
                         .save()
     
 elif procces == 'DELTA':
+    d = (datetime.today() - timedelta(hours=5))  - timedelta(days=1) # NOTA,  revisar horario de ejecucion
+    prefix = d.strftime("%Y%m%d")
+    prefix_file = f'{prefix_dir}/{table_name_dir}/DELTA/{prefix}.TXT'
+
+    path = f'{path_base}/{table_name_dir}/DELTA/{prefix}.TXT'
     
-    prefix_file = f'{prefix_dir}/{table_name_dir}/DELTA/{prefix}.001'
-
-    path = f'{path_base}/{table_name_dir}/DELTA/{prefix}'
-
     import boto3
     import botocore
     from botocore.errorfactory import ClientError
@@ -298,11 +213,6 @@ elif procces == 'DELTA':
     #Validar si no hay cambios
     df_delta_day = spark.read.option("encoding", "ISO-8859-1").text(path)
     df_delta_day = get_df_data(df_delta_day, fields)
-    #df = df.drop("value")
-    df_delta_day.withColumn('filename', F.input_file_name())
-    df_delta_day = df_delta_day.withColumn('fec_load_proc', F.split('filename', '.')[0])
-    df_delta_day = df_delta_day.withColumn('load_user', F.lit("matrix"))
-
     print(df_delta_day)
     if len(pks.split())>1:
         #Redshift
@@ -333,59 +243,47 @@ elif procces == 'DELTA':
   
 elif procces == 'FULL-DELTA':
     ###### FULL
-
-    # key = "RAW-SFTP/MATRIX/CLTESDAT/FULL/LOAD001.TXT"
-
-    df_full = spark.read.option("encoding", "ISO-8859-1").text(path_full)
-
-    df_full = get_df_data(df_full, fields, "FULL")
-
-
+    path = f'{path_base}/{table_name_dir}/FULL/'
+    df_full = spark.read.option("encoding", "ISO-8859-1").text(path)
+    
+    df_full = get_df_data(df_full, fields)
     #Redshift
-    #table_redshift = "{0}.{1}".format(schema_redshift, name_table)
+    table_redshift = "{0}.{1}".format(schema_redshift, name_table)
     df_full.write \
                         .format("com.databricks.spark.redshift") \
                         .option("url", url_redshift) \
-                        .option("dbtable", config_table["table_full_redshift"]) \
+                        .option("dbtable", table_redshift) \
                         .option("tempdir", table_temporal) \
                         .option("aws_iam_role", iam_redshift) \
                         .mode("overwrite") \
                         .save()
     
-    print("Count FULL ", df_full.count())
-    
     ###### ALL DELTA
+    path = f'{path_base}/{table_name_dir}/DELTA/'
     #Validar si no hay cambios
-    df_delta_all = spark.read.option("encoding", "ISO-8859-1").text(path_delta)
+    df_delta_all = spark.read.option("encoding", "ISO-8859-1").text(path)
+    df_delta_all = get_df_data(df_delta_all, fields)
 
-    df_delta_all = get_df_data(df_delta_all, fields, "DELTA")
-    
-    print("Count DELTA ", df_delta_all.count())
-
-    if len(pks.split(","))>=1:
+    if len(pks.split(","))>1:
         #Redshift
-        print("CON PKS")
-
-        sql_procces = get_script_procces(config_table)
-        
+        table_redshift = "{0}.{1}__cdc".format(schema_redshift, name_table)
+        sql_merge = get_script_merge(config_table)
         df_delta_all.write \
                         .format("com.databricks.spark.redshift") \
                         .option("url", url_redshift) \
-                        .option("dbtable", config_table["table_delta_redshift"]) \
+                        .option("dbtable", table_redshift) \
                         .option("tempdir", table_temporal) \
                         .option("aws_iam_role", iam_redshift) \
-                        .option("postactions", sql_procces) \
+                        .option("postactions", sql_merge) \
                         .mode("overwrite") \
                         .save()
-        #.option("postactions", sql_procces) \
-
     else: #without PKs
         #Redshift
-        #table_redshift = "{0}.{1}".format(schema_redshift, name_table)
+        table_redshift = "{0}.{1}".format(schema_redshift, name_table)
         df_delta_all.write \
                             .format("com.databricks.spark.redshift") \
                             .option("url", url_redshift) \
-                            .option("dbtable", config_table["table_full_redshift"]) \
+                            .option("dbtable", table_redshift) \
                             .option("tempdir", table_temporal) \
                             .option("aws_iam_role", iam_redshift) \
                             .mode("append") \

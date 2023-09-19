@@ -1,0 +1,17 @@
+FULL-LOAD
+1.- Se carga todo lo que esta en la carpeta LOAD
+2.- Al fed_create se le pone la fecha de modificacion de LOAD001
+3.- A user se le agrega matrix-FULL-LOAD
+
+FULL-CDC
+1.- Carga toda la carpeta DELTA
+2.- Se hace un diferencial  Con el campo PK y se ordena por la fecha del archivo
+3.- y en el query se hace el insert
+4.- Se dropea la tabla CT
+
+CDC diario-event
+1.- Se lee el archivo
+2.- mSe carga en la tabla CT overwrite y se le coloca el nombre del archivo 20240917.001 ([table_name]__ct_001)
+3.- Se prepara el query diferencial por la PK y se ordena por la fecha del archivo
+4.- Se dropea la tabla "ct"
+

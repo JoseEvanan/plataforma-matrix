@@ -5,7 +5,7 @@
         "path": "RAW-SFTP/F685/Mayo2023",
         "filename": "F685I_A.TXT,F685I_B.TXT,F685I_C.TXT,F685I_D.TXT,F685I_E.TXT,F685I_F.TXT",
         "procces": "FULL",
-        "pks": "COD_PERSONATH",
+        "pks": "",
         "type_file": "txt",
         "table_name_dir": "CLTESDTM",
         "data": [
@@ -47,13 +47,103 @@
             }
         ]
     },
+    "M_ACUMULACIONSUPERMERCADOSDICCIONARIO": {
+        "table_name": "M_ACUMULACIONSUPERMERCADOSDICCIONARIO",
+        "bucket_name": "ue1stgdesaas3ftp001",
+        "path": "RAW-SFTP/F685/Enero2023",
+        "filename": "F685M.zip",
+        "procces": "FULL",
+        "pks": "",
+        "type_file": "txt",
+        "table_name_dir": "TEST01",
+        "data": [
+            {
+                "order": 1,
+                "type": "VARCHAR(100)",
+                "size": 20,
+                "name": "COD_ARTICULO"
+            },
+            {
+                "order": 2,
+                "type": "VARCHAR(100)",
+                "size": 20,
+                "name": "COD_ARTICULOORIGINAL"
+            },
+            {
+                "order": 3,
+                "type": "VARCHAR(1000)",
+                "size": 50,
+                "name": "DES_SUPERMERCADOSDICCIONARIO"
+            },
+            {
+                "order": 4,
+                "type": "VARCHAR(100)",
+                "size": 20,
+                "name": "COD_DEPARTAMENTO"
+            },
+            {
+                "order": 5,
+                "type": "VARCHAR(1000)",
+                "size": 100,
+                "name": "DES_ACUMULACIONSUPERMERCADODICCIONARIO"
+            },
+            {
+                "order": 6,
+                "type": "VARCHAR(1000)",
+                "size": 20,
+                "name": "DES_DEPARTAMENTO"
+            },
+            {
+                "order": 7,
+                "type": "VARCHAR(1000)",
+                "size": 100,
+                "name": "DES_CATEGORIA"
+            },
+            {
+                "order": 8,
+                "type": "VARCHAR(100)",
+                "size": 20,
+                "name": "COD_SUBCATEGORIA"
+            },
+            {
+                "order": 9,
+                "type": "VARCHAR(1000)",
+                "size": 100,
+                "name": "DES_SUBCATEGORIA"
+            },
+            {
+                "order": 10,
+                "type": "VARCHAR(1000)",
+                "size": 20,
+                "name": "DES_MARCA"
+            },
+            {
+                "order": 11,
+                "type": "VARCHAR(1000)",
+                "size": 100,
+                "name": "DES_ACUMULACIONSUPERMERCADODICCIONARIO2"
+            },
+            {
+                "order": 12,
+                "type": "VARCHAR(100)",
+                "size": 20,
+                "name": "COD_PROVEEDOR"
+            },
+            {
+                "order": 13,
+                "type": "VARCHAR(1000)",
+                "size": 100,
+                "name": "DES_PROVEEDOR"
+            }
+        ]
+    },
     "M_ACUMULACION": {
         "table_name": "M_ACUMULACION",
         "bucket_name": "ue1stgdesaas3ftp001",
         "path": "RAW-SFTP/F685/Mayo2023",
         "filename": "F685A.TXT",
         "procces": "FULL",
-        "pks": "COD_PROMOCIONACUMULACION",
+        "pks": "",
         "type_file": "txt",
         "table_name_dir": "CODPROMO",
         "data": [
@@ -77,7 +167,7 @@
         "path": "RAW-SFTP/F685/Mayo2023",
         "filename": "F685H6.TXT",
         "procces": "FULL",
-        "pks": "COD_PERSONATH",
+        "pks": "",
         "type_file": "txt",
         "table_name_dir": "CLTESDIR",
         "data": [
@@ -353,7 +443,7 @@
         "path": "RAW-SFTP/F685/Mayo2023/",
         "filename": "F685D.TXT",
         "procces": "FULL",
-        "pks": "COD_PERSONATH",
+        "pks": "",
         "type_file": "txt",
         "table_name_dir": "TMUNFIN",
         "data": [
@@ -557,7 +647,7 @@
         "path": "RAW-SFTP/F685/Mayo2023",
         "filename": "F685G.TXT",
         "procces": "FULL",
-        "pks": "cod_personath",
+        "pks": "",
         "type_file": "txt",
         "table_name_dir": "CLTESTRJ",
         "data": [
@@ -653,7 +743,7 @@
         "path": "RAW-SFTP/F685/Mayo2023",
         "filename": "F685_1.TXT,F685_2.TXT,F685_3.TXT,F685_4.TXT,F685_5.TXT,F685_6.TXT,F685_7.TXT,F685_A.TXT,F685_B.TXT,F685_C.TXT,F685_D.TXT,F685_E.TXT,F685_F.TXT,F685_G.TXT,F685_H.TXT,F685_I.TXT,F685_J.TXT,F685_K.TXT,F685_L.TXT,F685_M.TXT,F685_N.TXT,F685_O.TXT,F685_P.TXT,F685_Q.TXT,F685_R.TXT,F685_S.TXT,F685_T.TXT,F685_U.TXT,F685_V.TXT,F685_W.TXT,F685_X.TXT,F685_Y.TXT,F685_Z.TXT",
         "procces": "FULL",
-        "pks": "COD_PERSONATH",
+        "pks": "",
         "type_file": "txt",
         "table_name_dir": "TACUCAB",
         "data": [
@@ -929,13 +1019,205 @@
             }
         ]
     },
+    "T_ACUMULACIONSUPERMERCADOS": {
+        "table_name": "T_ACUMULACIONSUPERMERCADOS",
+        "bucket_name": "ue1stgdesaas3ftp001",
+        "path": "RAW-SFTP/F685/Mayo2023",
+        "filename": "F685L_A.TXT,F685L_B.TXT,F685L_C.TXT,F685L_D.TXT,F685L_E.TXT,F685L_F.TXT,F685L_G.TXT,F685L_H.TXT,F685L_I.TXT,F685L_J.TXT,F685L_K.TXT,F685L_L.TXT,F685L_M.TXT,F685L_N.TXT,F685L_O.TXT,F685L_P.TXT,F685L_Q.TXT,F685L_R.TXT,F685L_S.TXT,F685L_T.TXT,F685L_U.TXT,F685L_V.TXT,F685L_W.TXT,F685L_X.TXT,F685L_Y.TXT,F685L_Z.TXT",
+        "procces": "FULL",
+        "pks": "",
+        "type_file": "txt",
+        "table_name_dir": "TEST02",
+        "data": [
+            {
+                "order": 1,
+                "type": "VARCHAR(1000)",
+                "size": 4,
+                "name": "DES_ACUMULACIONCADENA"
+            },
+            {
+                "order": 2,
+                "type": "VARCHAR(1000)",
+                "size": 4,
+                "name": "DES_ACUMULACIONTIENDA"
+            },
+            {
+                "order": 3,
+                "type": "VARCHAR(100)",
+                "size": 12,
+                "name": "COD_TARJETA"
+            },
+            {
+                "order": 4,
+                "type": "VARCHAR(100)",
+                "size": 10,
+                "name": "COD_PERSONATH"
+            },
+            {
+                "order": 5,
+                "type": "TIMESTAMP",
+                "size": 8,
+                "name": "FEC_TRANSACCION"
+            },
+            {
+                "order": 6,
+                "type": "TIMESTAMP",
+                "size": 8,
+                "name": "FEH_TRANSACCION"
+            },
+            {
+                "order": 7,
+                "type": "BIGINT",
+                "size": 6,
+                "name": "NUM_CAJA"
+            },
+            {
+                "order": 8,
+                "type": "BIGINT",
+                "size": 6,
+                "name": "NUM_SECUENCIACAJA"
+            },
+            {
+                "order": 9,
+                "type": "DECIMAL(8,2)",
+                "size": 8,
+                "name": "IMP_SOLESPAGADOS"
+            },
+            {
+                "order": 10,
+                "type": "VARCHAR(1000)",
+                "size": 1,
+                "name": "DES_SIGNO"
+            },
+            {
+                "order": 11,
+                "type": "BIGINT",
+                "size": 8,
+                "name": "NUM_PUNTOSACUMULADOS"
+            },
+            {
+                "order": 12,
+                "type": "VARCHAR(1000)",
+                "size": 1,
+                "name": "DES_SIGNO1"
+            },
+            {
+                "order": 13,
+                "type": "VARCHAR(100)",
+                "size": 7,
+                "name": "COD_PROMOCION"
+            },
+            {
+                "order": 14,
+                "type": "VARCHAR(100)",
+                "size": 2,
+                "name": "COD_CANAL"
+            },
+            {
+                "order": 15,
+                "type": "VARCHAR(1000)",
+                "size": 20,
+                "name": "DES_ACUMULACIONSUPERMERCADOS"
+            },
+            {
+                "order": 16,
+                "type": "VARCHAR(100)",
+                "size": 6,
+                "name": "COD_CAJERA"
+            },
+            {
+                "order": 17,
+                "type": "VARCHAR(100)",
+                "size": 2,
+                "name": "TIP_FORMAPAGO"
+            },
+            {
+                "order": 18,
+                "type": "VARCHAR(1000)",
+                "size": 20,
+                "name": "DES_ACUMULACIONSUPERMERCADOS2"
+            },
+            {
+                "order": 19,
+                "type": "BIGINT",
+                "size": 11,
+                "name": "NUM_RUC"
+            },
+            {
+                "order": 20,
+                "type": "VARCHAR(1000)",
+                "size": 4,
+                "name": "DES_SECUENCIADETALLE"
+            },
+            {
+                "order": 21,
+                "type": "VARCHAR(100)",
+                "size": 20,
+                "name": "COD_ARTICULO"
+            },
+            {
+                "order": 22,
+                "type": "DECIMAL(8,3)",
+                "size": 8,
+                "name": "CAN_ACUMULACIONSUPERMERCADOS"
+            },
+            {
+                "order": 23,
+                "type": "VARCHAR(1000)",
+                "size": 1,
+                "name": "DES_SIGNO2"
+            },
+            {
+                "order": 24,
+                "type": "DECIMAL(8,2)",
+                "size": 8,
+                "name": "IMP_PRECIOUNITARIO"
+            },
+            {
+                "order": 25,
+                "type": "VARCHAR(1000)",
+                "size": 1,
+                "name": "DES_SIGNO3"
+            },
+            {
+                "order": 26,
+                "type": "DECIMAL(8,2)",
+                "size": 8,
+                "name": "IMP_DESCUENTO"
+            },
+            {
+                "order": 27,
+                "type": "VARCHAR(1000)",
+                "size": 1,
+                "name": "DES_SIGNO4"
+            },
+            {
+                "order": 28,
+                "type": "VARCHAR(100)",
+                "size": 2,
+                "name": "COD_FORMAPAGO"
+            },
+            {
+                "order": 29,
+                "type": "VARCHAR(1000)",
+                "size": 20,
+                "name": "DES_ACUMULACIONSUPERMERCADOS3"
+            },
+            {
+                "order": 30,
+                "type": "BIGINT",
+                "size": 8,
+                "name": "NUM_PUNTOSCANJEADOS"
+            }
+        ]
+    },
     "T_CANJE": {
         "table_name": "T_CANJE",
         "bucket_name": "ue1stgdesaas3ftp001",
         "path": "RAW-SFTP/F685/Mayo2023",
         "filename": "F685C.TXT",
         "procces": "FULL",
-        "pks": "COD_PERSONATH",
+        "pks": "",
         "type_file": "txt",
         "table_name_dir": "TCANCAB",
         "data": [
@@ -1157,7 +1439,7 @@
         "path": "RAW-SFTP/F685/Mayo2023",
         "filename": "F685J.TXT",
         "procces": "FULL",
-        "pks": "COD_PERSONATH",
+        "pks": "",
         "type_file": "txt",
         "table_name_dir": "CLTESREC",
         "data": [
@@ -1271,7 +1553,7 @@
         "path": "RAW-SFTP/F685/Mayo2023",
         "filename": "F685E3.TXT",
         "procces": "FULL",
-        "pks": "COD_PERSONA",
+        "pks": "COD_PERSONA,COD_CUENTA",
         "type_file": "txt",
         "table_name_dir": "CLTESSAL",
         "data": [
@@ -1307,7 +1589,7 @@
         "path": "RAW-SFTP/F685/Abril2023",
         "filename": "F549A_01.TXT,F549A_02.TXT,F549A_03.TXT,F549A_04.TXT,F549A_05.TXT,F549A_06.TXT,F549A_07.TXT,F549A_08.TXT,F549A_09.TXT,F549A_10.TXT,F549A_11.TXT,F549A_12.TXT,F549A_13.TXT,F549A_14.TXT,F549A_15.TXT,F549A_16.TXT,F549A_17.TXT,F549A_18.TXT,F549A_19.TXT,F549A_20.TXT,F549A_21.TXT,F549A_22.TXT,F549A_23.TXT,F549A_24.TXT,F549A_25.TXT,F549A_26.TXT,F549A_27.TXT,F549A_28.TXT,F549A_29.TXT,F549A_30.TXT",
         "procces": "FULL",
-        "pks": "COD_PERSONA",
+        "pks": "",
         "type_file": "txt",
         "table_name_dir": "CLTESDDA",
         "data": [
