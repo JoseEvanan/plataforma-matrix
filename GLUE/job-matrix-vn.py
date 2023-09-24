@@ -75,7 +75,7 @@ bucket_name = "ue1stgdesaas3ftp001"
 
 
 ####### FUNCTIONS
-def get_df_data(df, fields,procces):
+def get_df_data(df, fields, procces):
     init = 1
     #Cast data type
     for field in fields:
@@ -115,8 +115,6 @@ def get_df_data(df, fields,procces):
         df = df.withColumn("fec_proc_matrix", F.to_date(F.lit(date_file_load), "yyyyMMdd")) 
         df = df.withColumn('load_user_matrix', F.lit("matrix-full-delta"))
     else:
-        
-        
         df = df.withColumn('filename_matrix', F.input_file_name())
         df = df.withColumn("split_col_path", F.split(F.col("filename_matrix"), "/")) \
                             .withColumn("filename_matrix_tmp", F.col("split_col_path").getItem(F.size(F.col("split_col_path"))-1)) \
@@ -205,6 +203,25 @@ def get_datetime_file(bucket, path_key):
     print(type(date_file_load),date_file_load)
     return date_file_load
 
+def load_full_load(path_full, fields):
+
+        df_full = spark.read.option("encoding", "ISO-8859-1").text(path_full)
+
+        df_full = get_df_data(df_full, fields, "FULL")
+        df_full = df_full.dropna()
+
+        #Redshift
+        #table_redshift = "{0}.{1}".format(schema_redshift, name_table)
+        df_full.write \
+                            .format("com.databricks.spark.redshift") \
+                            .option("url", url_redshift) \
+                            .option("dbtable", config_table["table_full_redshift"]) \
+                            .option("tempdir", table_temporal) \
+                            .option("aws_iam_role", iam_redshift) \
+                            .mode("overwrite") \
+                            .save()
+        
+        print("Count FULL ", df_full.count())
 #######################
 #REDSHIFT
 db_host = config_main['DB_HOST']
@@ -254,25 +271,11 @@ prefix = d.strftime("%Y%m%d")
 
 print("Procces",procces)
 if procces == 'FULL':
-    path = f'{path_base}/{table_name_dir}/FULL/'
-    df_full = spark.read.option("encoding", "ISO-8859-1").text(path)
-    
-    df_full = get_df_data(df_full, fields)
+    ###### FULL
 
+    # key = "RAW-SFTP/MATRIX/CLTESDAT/FULL/LOAD001.TXT"
 
-    df_full = df_full.withColumn('fec_load_proc', F.lit(prefix))
-    df_full = df_full.withColumn('load_user', F.lit("matrix"))
-    
-    #Redshift
-    table_redshift = "{0}.{1}".format(schema_redshift, name_table)
-    df_full.write \
-                        .format("com.databricks.spark.redshift") \
-                        .option("url", url_redshift) \
-                        .option("dbtable", table_redshift) \
-                        .option("tempdir", table_temporal) \
-                        .option("aws_iam_role", iam_redshift) \
-                        .mode("overwrite") \
-                        .save()
+    load_full_load(path_full, fields)
     
 elif procces == 'DELTA':
     
@@ -336,23 +339,10 @@ elif procces == 'FULL-DELTA':
 
     # key = "RAW-SFTP/MATRIX/CLTESDAT/FULL/LOAD001.TXT"
 
-    df_full = spark.read.option("encoding", "ISO-8859-1").text(path_full)
+    load_full_load(path_full, fields)
 
-    df_full = get_df_data(df_full, fields, "FULL")
-
-
-    #Redshift
-    #table_redshift = "{0}.{1}".format(schema_redshift, name_table)
-    df_full.write \
-                        .format("com.databricks.spark.redshift") \
-                        .option("url", url_redshift) \
-                        .option("dbtable", config_table["table_full_redshift"]) \
-                        .option("tempdir", table_temporal) \
-                        .option("aws_iam_role", iam_redshift) \
-                        .mode("overwrite") \
-                        .save()
     
-    print("Count FULL ", df_full.count())
+    
     
     ###### ALL DELTA
     #Validar si no hay cambios
