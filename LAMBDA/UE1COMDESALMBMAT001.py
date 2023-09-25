@@ -5,111 +5,80 @@ from pprint import pprint
 import boto3
 
 
-def get_files(s3_client,bucket, prefix, token=None):
-    
-    
-    if token:
-        objects = s3_client.list_objects_v2(Bucket='ue1stgdesaas3ftp001',Prefix='RAW-SFTP/F685/Julio2023/MATRIX/', ContinuationToken=token)
-    else:
-        objects = s3_client.list_objects_v2(Bucket='ue1stgdesaas3ftp001',Prefix='RAW-SFTP/F685/Julio2023/MATRIX/')
-    
-    return  objects
-    
-
-    
-def lambda_handler2(event, context):
-    # TODO implement
-    from datetime import datetime, timedelta
-    #operation = event['operation']
-    print(type(event))
-    print(event)
-    
-    client = boto3.client('glue')
-    
-    for key, data in event.items():
-        print(key, data)
-
-        #for job in data['data']:
-            # conversion
-        data_str = dumps(data)
-        
-        response = client.start_job_run(
-                       JobName = "job-matrix-vn", #'job-matrix-backup',#'job-matrix-backup', #'job-matrix-test',#job_matrix #job-M_ACUMULACION
-                       Arguments = {
-                         '--CONFIG_TABLE':   data_str
-            })
-        print(response)
-        #raise
-    return {
-        'statusCode': 200,
-        'body': json.dumps('Hello from Lambda!')
-    }
-
-def lambda_handler3(event, context):
-    """
-    Copy files event
-    From: ue1stgdesaas3ftp001/RAW-SFTP/MATRIX/
-    To: ue1stgdesaas3mat001/RAW/
-    """
-    s3 = boto3.resource('s3')
-    pprint(event)
-    print("*"*10)
-    bucket_to  = "ue1stgdesaas3mat001"
-    prefix_to = "RAW/"
-    
-    bucket_from = ""
-    key_from = ""
-    namefile = ""
-    
-    is_delta = False
-    
-    for record in event['Records']:
-        bucket_from = record['s3']['bucket']['name']
-        key_from = record['s3']['object']['key']
-        
-        if "DELTA" in key_from:
-            is_delta = True
-        else: 
-            print("Carga Historica en proceso")
-        
-        #filename  = key_from.split('/')[-1]
-        
-    
- 
-    return {
-        'statusCode': 200,
-        'body': json.dumps('Hello from Lambda!')
-    }
 
 
 def lambda_handler(event, context):
     client = boto3.client('glue')
+    config_path = "config.json"
+
+    pprint(event)
+    #raise
     
+     
+    # Opening JSON file
+    f = open(config_path)
+     
+    # returns JSON object as
+    # a dictionary
+    config_table = json.load(f)
+    #type-process "DELTA"/"FULL"/"FULL-DELTA"
+    table_process = "DELTA"
+    file_process = "None"
+    if "process" in event :
+        table_process = event["process"]
+        if  "tables" in event:
+            for table in event["tables"]:
+                config_table_base = config_table[table.upper().strip()]
+                
+                config_table_base["procces"] = table_process
+                print("config_table_base",config_table_base)
+                #raise
+                data_str = dumps(config_table_base)
+                
+                print(file_process, data_str)
+
+                response = client.start_job_run(
+                           JobName = "job-matrix-vn", #'job-matrix-backup',#'job-matrix-backup', #'job-matrix-test',#job_matrix #job-M_ACUMULACION
+                           Arguments = {
+                             '--CONFIG_TABLE':   data_str,
+                             '--FILE_PROCCES': file_process
+                })
+        else:
+            raise ("No hay tablas para procesar")
+                
+                
+    elif "Records" in event:
+        for record in event['Records']:
+            #print(key, data)
+            if "s3" in record and 'object' in record['s3'] and 'key' and record['s3']['object']:
+                file_process = record['s3']['object']['key']
+                #s3://ue1stgdesaas3ftp001/RAW-SFTP/MATRIX/CLTESDAT/DELTA/20230801.001
+                table_rename = file_process.split("/")[-3]
+                print(table_rename)
+                config_table_base = {}
+                for k,v in config_table.items():
+                    if table_rename == v["table_name_dir"].upper():
+                        config_table_base = v
+                        
+                        config_table_base["procces"] = table_process
+                if len(config_table_base) == 0:
+                    raise("La tabla no esta registrada en la configuracion")
+                else:
+                    data_str = dumps(config_table_base)
+                    print(file_process, data_str)
+                    response = client.start_job_run(
+                                   JobName = "job-matrix-vn", #'job-matrix-backup',#'job-matrix-backup', #'job-matrix-test',#job_matrix #job-M_ACUMULACION
+                                   Arguments = {
+                                     '--CONFIG_TABLE':   data_str,
+                                     '--FILE_PROCCES': file_process
+                        })
+                    
+                
+            else: 
+                raise("proceso no tiene archivo para procesar")
+
     
-    for record in event['Records']:
-        
-    for key, data in event.items():
-    for record in event['Records']:
-        print(key, data)
-        
-        file_process = "s3://ue1stgdesaas3ftp001/RAW-SFTP/MATRIX/CLTESDAT/DELTA/20230807.001"
-        file_process = "None"
-        #key_from = record['s3']['object']['key']
-        if "s3" in record and '' in record['s3'] and '' and record['s3']['object']
-        file_process = "RAW-SFTP/MATRIX/CLTESDAT/DELTA/20230807.001"
-        #file_process = "None"
-        #for job in data['data']:
-            # conversion
-        data_str = dumps(data)
-        
-        response = client.start_job_run(
-                       JobName = "job-matrix-vn", #'job-matrix-backup',#'job-matrix-backup', #'job-matrix-test',#job_matrix #job-M_ACUMULACION
-                       Arguments = {
-                         '--CONFIG_TABLE':   data_str,
-                         '--FILE_PROCCES': file_process
-            })
-        print(response)
-        #raise
+
     return {
         'statusCode': 200,
         'body': data_str

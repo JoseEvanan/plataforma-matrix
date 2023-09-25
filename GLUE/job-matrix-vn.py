@@ -285,7 +285,7 @@ schema_redshift = "test"
 fields = config_table["data"]
 table_name_dir = config_table["table_name_dir"]
 name_table = config_table["table_name"].lower()
-type_file = config_table["type_file"]
+#type_file = config_table["type_file"]
 procces = config_table["procces"]
 pks = config_table["pks"]
 
@@ -324,29 +324,37 @@ elif procces == 'DELTA':
            option("header", "true").\
            load("s3://bucket-name/file-name.csv")
     """
-    partition = file_process.split(".")[-1]
-    config_table["table_delta_redshift"]  = "{0}.{1}__cdc_{2}".format(schema_redshift, name_table,partition)
-    print("partition", partition)
+    path = ""
+    if file_process != "None":
+        partition = file_process.split(".")[-1]
+        config_table["table_delta_redshift"]  = "{0}.{1}__cdc_{2}".format(schema_redshift, name_table,partition)
+        print("partition", partition)
+        path = f's3://{bucket}/{file_process}'
+
+        import boto3
+        import botocore
+        from botocore.errorfactory import ClientError
+
+        s3 = boto3.client('s3')
+        try:
+            s3.head_object(Bucket=bucket, Key=file_process)
+        except botocore.exceptions.ClientError as e:
+            if e.response['Error']['Code'] == "404":
+                # The key does not exist.
+                raise (f"No existe actualizacion para {path}")
+            else:
+                raise ("Error en la ingesta")
+        
+    else:
+        path = path_full_delta
     print("table_delta_redshift", config_table["table_delta_redshift"])
     #path = f'{path_base}/{file_process}'
 
 
-    path = f's3://{bucket}/{file_process}'
+    
 
     print("path", path)
-    import boto3
-    import botocore
-    from botocore.errorfactory import ClientError
 
-    s3 = boto3.client('s3')
-    try:
-        s3.head_object(Bucket=bucket, Key=file_process)
-    except botocore.exceptions.ClientError as e:
-        if e.response['Error']['Code'] == "404":
-            # The key does not exist.
-            raise (f"No existe actualizacion para {path}")
-        else:
-            raise ("Error en la ingesta")
 
     load_delta_load(path, fields)
 
