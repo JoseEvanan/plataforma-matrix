@@ -1,0 +1,6 @@
+{
+    "process": "DELTA",
+    "tables": [
+        "M_CLIENTE"
+    ]
+}

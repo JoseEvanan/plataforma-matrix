@@ -1,0 +1,1733 @@
+
+{
+    "T_LOGACTUALIZACION": {
+        "table_name": "T_LOGACTUALIZACION",
+        "pks": "COD_PERSONATH",
+        "table_name_dir": "CLTESDTM",
+        "data": [
+            {
+                "order": 1,
+                "type": "VARCHAR(100)",
+                "size": 10,
+                "name": "COD_PERSONATH"
+            },
+            {
+                "order": 2,
+                "type": "VARCHAR(100)",
+                "size": 6,
+                "name": "COD_SECCAMBIO"
+            },
+            {
+                "order": 3,
+                "type": "VARCHAR(100)",
+                "size": 10,
+                "name": "COD_USUARIO"
+            },
+            {
+                "order": 4,
+                "type": "VARCHAR(1000)",
+                "size": 20,
+                "name": "DES_CAMPOMODIFICADO"
+            },
+            {
+                "order": 5,
+                "type": "TIMESTAMP",
+                "size": 8,
+                "name": "FEC_LOGATUALIZACION"
+            },
+            {
+                "order": 6,
+                "type": "TIMESTAMP",
+                "size": 8,
+                "name": "FEH_ACTUALIZACION"
+            }
+        ]
+    },
+    "M_ACUMULACION": {
+        "table_name": "M_ACUMULACION",
+        "pks": "COD_PROMOCIONACUMULACION",
+        "table_name_dir": "CODPROMO",
+        "data": [
+            {
+                "order": 1,
+                "type": "VARCHAR(100)",
+                "size": 7,
+                "name": "COD_PROMOCIONACUMULACION"
+            },
+            {
+                "order": 2,
+                "type": "VARCHAR(1000)",
+                "size": 100,
+                "name": "DES_PROMOCIONACUMULACION"
+            }
+        ]
+    },
+    "M_DATOSADICIONALESCLIENTE": {
+        "table_name": "M_DATOSADICIONALESCLIENTE",
+        "pks": "COD_PERSONATH",
+        "table_name_dir": "CLTESDIR",
+        "data": [
+            {
+                "order": 1,
+                "type": "VARCHAR(100)",
+                "size": 10,
+                "name": "COD_PERSONATH"
+            },
+            {
+                "order": 2,
+                "type": "VARCHAR(100)",
+                "size": 6,
+                "name": "COD_POSICION"
+            },
+            {
+                "order": 3,
+                "type": "VARCHAR(1000)",
+                "size": 150,
+                "name": "DES_DIRECCION"
+            },
+            {
+                "order": 4,
+                "type": "VARCHAR(1000)",
+                "size": 25,
+                "name": "DES_DEPARTAMENTO"
+            },
+            {
+                "order": 5,
+                "type": "VARCHAR(1000)",
+                "size": 25,
+                "name": "DES_PROVINCIA"
+            },
+            {
+                "order": 6,
+                "type": "VARCHAR(1000)",
+                "size": 25,
+                "name": "DES_DISTRITO"
+            },
+            {
+                "order": 7,
+                "type": "VARCHAR(1000)",
+                "size": 150,
+                "name": "DES_REFERENCIA"
+            },
+            {
+                "order": 8,
+                "type": "INTEGER",
+                "size": 1,
+                "name": "FLG_ERROR"
+            },
+            {
+                "order": 9,
+                "type": "VARCHAR(1000)",
+                "size": 20,
+                "name": "DES_COORDDENADAX"
+            },
+            {
+                "order": 10,
+                "type": "VARCHAR(1000)",
+                "size": 20,
+                "name": "DES_COORDDENADAY"
+            },
+            {
+                "order": 11,
+                "type": "VARCHAR(1000)",
+                "size": 1,
+                "name": "DES_NSE"
+            }
+        ]
+    },
+    "M_CLIENTE": {
+        "table_name": "M_CLIENTE",
+        "pks": "COD_PERSONATH",
+        "table_name_dir": "CLTESDAT",
+        "data": [
+            {
+                "order": 1,
+                "type": "VARCHAR(100)",
+                "size": 10,
+                "name": "COD_PERSONATH"
+            },
+            {
+                "order": 2,
+                "type": "VARCHAR(100)",
+                "size": 2,
+                "name": "TIP_PERSONA"
+            },
+            {
+                "order": 3,
+                "type": "VARCHAR(1000)",
+                "size": 20,
+                "name": "DES_TIPOPERSONA"
+            },
+            {
+                "order": 4,
+                "type": "VARCHAR(100)",
+                "size": 4,
+                "name": "TIP_DOCUMENTOIDENTIDAD"
+            },
+            {
+                "order": 5,
+                "type": "VARCHAR(1000)",
+                "size": 10,
+                "name": "DES_DOCUMENTOIDENTIDAD"
+            },
+            {
+                "order": 6,
+                "type": "INTEGER",
+                "size": 1,
+                "name": "FLG_DOCUMENTOIDENTIDAD"
+            },
+            {
+                "order": 7,
+                "type": "INTEGER",
+                "size": 1,
+                "name": "FLG_RUC"
+            },
+            {
+                "order": 8,
+                "type": "VARCHAR(1000)",
+                "size": 1,
+                "name": "DES_NOMBRE"
+            },
+            {
+                "order": 9,
+                "type": "VARCHAR(1000)",
+                "size": 1,
+                "name": "DES_APEPATERNO"
+            },
+            {
+                "order": 10,
+                "type": "VARCHAR(1000)",
+                "size": 1,
+                "name": "DES_APEMATERNO"
+            },
+            {
+                "order": 11,
+                "type": "TIMESTAMP",
+                "size": 8,
+                "name": "FEC_NACIMIENTO"
+            },
+            {
+                "order": 12,
+                "type": "INTEGER",
+                "size": 4,
+                "name": "CAN_EDAD"
+            },
+            {
+                "order": 13,
+                "type": "VARCHAR(100)",
+                "size": 1,
+                "name": "TIP_SEXO"
+            },
+            {
+                "order": 14,
+                "type": "VARCHAR(100)",
+                "size": 1,
+                "name": "TIP_ESTADOCIVIL"
+            },
+            {
+                "order": 15,
+                "type": "INTEGER",
+                "size": 1,
+                "name": "FLG_TENENCIAHIJOS"
+            },
+            {
+                "order": 16,
+                "type": "INTEGER",
+                "size": 1,
+                "name": "FLG_TELEFONOFIJO"
+            },
+            {
+                "order": 17,
+                "type": "INTEGER",
+                "size": 1,
+                "name": "FLG_TELEFONOCELULAR"
+            },
+            {
+                "order": 18,
+                "type": "INTEGER",
+                "size": 1,
+                "name": "FLG_CONSENTIMIENTOLLAMADA"
+            },
+            {
+                "order": 19,
+                "type": "INTEGER",
+                "size": 1,
+                "name": "FLG_CORREO"
+            },
+            {
+                "order": 20,
+                "type": "INTEGER",
+                "size": 1,
+                "name": "FLG_CONSENTIMIENTOEMAIL"
+            },
+            {
+                "order": 21,
+                "type": "INTEGER",
+                "size": 1,
+                "name": "FLG_DIRECCION"
+            },
+            {
+                "order": 22,
+                "type": "INTEGER",
+                "size": 1,
+                "name": "FLG_DIRECCIONERROR"
+            },
+            {
+                "order": 23,
+                "type": "INTEGER",
+                "size": 1,
+                "name": "FLG_DIRECCIONGPS"
+            },
+            {
+                "order": 24,
+                "type": "VARCHAR(100)",
+                "size": 1,
+                "name": "TIP_NIVELSOCIOECONOMICO"
+            },
+            {
+                "order": 25,
+                "type": "TIMESTAMP",
+                "size": 8,
+                "name": "FEC_AFILIACION"
+            },
+            {
+                "order": 26,
+                "type": "VARCHAR(1000)",
+                "size": 4,
+                "name": "DES_AFILIACIONCADENA"
+            },
+            {
+                "order": 27,
+                "type": "TIMESTAMP",
+                "size": 8,
+                "name": "FEC_CREACION"
+            },
+            {
+                "order": 28,
+                "type": "TIMESTAMP",
+                "size": 8,
+                "name": "FEC_ULTIMAMODIFICACION"
+            },
+            {
+                "order": 29,
+                "type": "INTEGER",
+                "size": 1,
+                "name": "FLG_AUTORIZACOMPARTIRDATOSOCIO"
+            },
+            {
+                "order": 30,
+                "type": "INTEGER",
+                "size": 1,
+                "name": "FLG_CLIENTEFALLECIDO"
+            },
+            {
+                "order": 31,
+                "type": "INTEGER",
+                "size": 1,
+                "name": "FLG_AUTOCANJE"
+            }
+        ]
+    },
+    "M_MOVIMIENTOFINANCIERO": {
+        "table_name": "M_MOVIMIENTOFINANCIERO",
+        "bucket_name": "ue1stgdesaas3ftp001",
+        "path": "RAW-SFTP/F685/Mayo2023/",
+        "filename": "F685D.TXT",
+        "procces": "FULL-DELTA",
+        "pks": "COD_PERSONATH",
+        "type_file": "txt",
+        "table_name_dir": "TMUNFIN",
+        "data": [
+            {
+                "order": 1,
+                "type": "VARCHAR(100)",
+                "size": 5,
+                "name": "COD_ESQUEMA"
+            },
+            {
+                "order": 2,
+                "type": "VARCHAR(100)",
+                "size": 3,
+                "name": "TIP_PROCESO"
+            },
+            {
+                "order": 3,
+                "type": "VARCHAR(100)",
+                "size": 11,
+                "name": "COD_PROCESOADM"
+            },
+            {
+                "order": 4,
+                "type": "VARCHAR(100)",
+                "size": 11,
+                "name": "COD_SECPROCESOADM"
+            },
+            {
+                "order": 5,
+                "type": "VARCHAR(100)",
+                "size": 10,
+                "name": "COD_PERSONATH"
+            },
+            {
+                "order": 6,
+                "type": "VARCHAR(100)",
+                "size": 9,
+                "name": "COD_SEGUIMIENTO"
+            },
+            {
+                "order": 7,
+                "type": "VARCHAR(100)",
+                "size": 19,
+                "name": "COD_TARJETA"
+            },
+            {
+                "order": 8,
+                "type": "TIMESTAMP",
+                "size": 8,
+                "name": "FEC_TRANSACCION"
+            },
+            {
+                "order": 9,
+                "type": "DECIMAL(15,2)",
+                "size": 15,
+                "name": "IMP_SOLESPAGADOS"
+            },
+            {
+                "order": 10,
+                "type": "VARCHAR(100)",
+                "size": 5,
+                "name": "COD_GIRO"
+            },
+            {
+                "order": 11,
+                "type": "VARCHAR(1000)",
+                "size": 100,
+                "name": "DES_GIRO"
+            },
+            {
+                "order": 12,
+                "type": "VARCHAR(100)",
+                "size": 15,
+                "name": "COD_COMERCIO"
+            },
+            {
+                "order": 13,
+                "type": "VARCHAR(1000)",
+                "size": 150,
+                "name": "DES_COMERCIO"
+            },
+            {
+                "order": 14,
+                "type": "VARCHAR(100)",
+                "size": 5,
+                "name": "COD_TRANSACCION1"
+            },
+            {
+                "order": 15,
+                "type": "VARCHAR(1000)",
+                "size": 40,
+                "name": "DES_CODIGOTRANSACCION1"
+            },
+            {
+                "order": 16,
+                "type": "VARCHAR(100)",
+                "size": 1,
+                "name": "TIP_TRANSACCION"
+            },
+            {
+                "order": 17,
+                "type": "VARCHAR(100)",
+                "size": 7,
+                "name": "COD_TRANSACCION2"
+            },
+            {
+                "order": 18,
+                "type": "VARCHAR(1000)",
+                "size": 100,
+                "name": "DES_CODIGOTRANSACCION2"
+            },
+            {
+                "order": 19,
+                "type": "VARCHAR(100)",
+                "size": 3,
+                "name": "TIP_OPERACION"
+            },
+            {
+                "order": 20,
+                "type": "VARCHAR(1000)",
+                "size": 100,
+                "name": "DES_OPERACION"
+            }
+        ]
+    },
+    "M_PUNTOVENTA": {
+        "table_name": "M_PUNTOVENTA",
+        "pks": "",
+        "table_name_dir": "PTOSVTA",
+        "data": [
+            {
+                "order": 1,
+                "type": "VARCHAR(100)",
+                "size": 4,
+                "name": "COD_CADENA"
+            },
+            {
+                "order": 2,
+                "type": "VARCHAR(1000)",
+                "size": 50,
+                "name": "DES_PUNTOVENTA"
+            },
+            {
+                "order": 3,
+                "type": "VARCHAR(100)",
+                "size": 4,
+                "name": "COD_TIENDA"
+            },
+            {
+                "order": 4,
+                "type": "VARCHAR(1000)",
+                "size": 50,
+                "name": "DES_TIENDA"
+            },
+            {
+                "order": 5,
+                "type": "VARCHAR(100)",
+                "size": 25,
+                "name": "COD_DEPARTAMENTO"
+            },
+            {
+                "order": 6,
+                "type": "VARCHAR(100)",
+                "size": 25,
+                "name": "COD_PROVINCIA"
+            },
+            {
+                "order": 7,
+                "type": "VARCHAR(100)",
+                "size": 25,
+                "name": "COD_DISTRITO"
+            },
+            {
+                "order": 8,
+                "type": "INTEGER",
+                "size": 1,
+                "name": "FLG_DIRECCIONGPS"
+            },
+            {
+                "order": 9,
+                "type": "VARCHAR(100)",
+                "size": 20,
+                "name": "DES_LONGITUD_CORDE"
+            },
+            {
+                "order": 10,
+                "type": "VARCHAR(100)",
+                "size": 20,
+                "name": "DES_LATITUD_CORDE"
+            }
+        ]
+    },
+    "M_TARJETA": {
+        "table_name": "M_TARJETA",
+        "pks": "cod_personath",
+        "table_name_dir": "CLTESTRJ",
+        "data": [
+            {
+                "order": 1,
+                "type": "VARCHAR(100)",
+                "size": 19,
+                "name": "cod_tarjeta"
+            },
+            {
+                "order": 2,
+                "type": "VARCHAR(100)",
+                "size": 1,
+                "name": "cod_estadotarjeta"
+            },
+            {
+                "order": 3,
+                "type": "VARCHAR(100)",
+                "size": 20,
+                "name": "des_estadotarjeta"
+            },
+            {
+                "order": 4,
+                "type": "VARCHAR(100)",
+                "size": 4,
+                "name": "tip_tarjeta"
+            },
+            {
+                "order": 5,
+                "type": "VARCHAR(100)",
+                "size": 20,
+                "name": "des_tiptarjeta"
+            },
+            {
+                "order": 6,
+                "type": "VARCHAR(100)",
+                "size": 10,
+                "name": "cod_personath"
+            },
+            {
+                "order": 7,
+                "type": "VARCHAR(100)",
+                "size": 10,
+                "name": "cod_persona"
+            },
+            {
+                "order": 8,
+                "type": "VARCHAR(100)",
+                "size": 3,
+                "name": "cod_cuenta"
+            },
+            {
+                "order": 9,
+                "type": "TIMESTAMP",
+                "size": 8,
+                "name": "fec_solicitud"
+            },
+            {
+                "order": 10,
+                "type": "TIMESTAMP",
+                "size": 8,
+                "name": "fec_afiliacion"
+            },
+            {
+                "order": 11,
+                "type": "VARCHAR(100)",
+                "size": 4,
+                "name": "des_afiliacioncadena"
+            },
+            {
+                "order": 12,
+                "type": "VARCHAR(100)",
+                "size": 4,
+                "name": "des_afiliaciontienda"
+            },
+            {
+                "order": 13,
+                "type": "VARCHAR(100)",
+                "size": 1,
+                "name": "tip_tarjetafinanciera"
+            },
+            {
+                "order": 14,
+                "type": "VARCHAR(100)",
+                "size": 15,
+                "name": "des_afiliacion"
+            }
+        ]
+    },
+    "T_ACUMULACION": {
+        "table_name": "T_ACUMULACION",
+        "pks": "COD_PERSONATH",
+        "table_name_dir": "TACUCAB",
+        "data": [
+            {
+                "order": 1,
+                "type": "VARCHAR(100)",
+                "size": 10,
+                "name": "COD_PERSONA"
+            },
+            {
+                "order": 2,
+                "type": "VARCHAR(100)",
+                "size": 3,
+                "name": "TIP_CUENTA"
+            },
+            {
+                "order": 3,
+                "type": "VARCHAR(100)",
+                "size": 19,
+                "name": "COD_TARJETA"
+            },
+            {
+                "order": 4,
+                "type": "VARCHAR(1000)",
+                "size": 4,
+                "name": "DES_ACUMULACIONCADENA"
+            },
+            {
+                "order": 5,
+                "type": "VARCHAR(1000)",
+                "size": 4,
+                "name": "DES_ACUMULACIONTIENDA"
+            },
+            {
+                "order": 6,
+                "type": "TIMESTAMP",
+                "size": 8,
+                "name": "FEC_TRANSACCION"
+            },
+            {
+                "order": 7,
+                "type": "smalldatetime",
+                "size": 8,
+                "name": "FEH_TRANSACCION"
+            },
+            {
+                "order": 8,
+                "type": "VARCHAR(1000)",
+                "size": 6,
+                "name": "DES_CAJA"
+            },
+            {
+                "order": 9,
+                "type": "BIGINT",
+                "size": 6,
+                "name": "NUM_SECUENCIA"
+            },
+            {
+                "order": 10,
+                "type": "DECIMAL(15,2)",
+                "size": 15,
+                "name": "NUM_SOLES"
+            },
+            {
+                "order": 11,
+                "type": "VARCHAR(1000)",
+                "size": 1,
+                "name": "DES_SIGNOSOLES"
+            },
+            {
+                "order": 12,
+                "type": "DECIMAL(15,2)",
+                "size": 15,
+                "name": "NUM_PUNTOSACUMULADOS"
+            },
+            {
+                "order": 13,
+                "type": "VARCHAR(1000)",
+                "size": 1,
+                "name": "DES_SIGNOPUNTOS"
+            },
+            {
+                "order": 14,
+                "type": "TIMESTAMP",
+                "size": 8,
+                "name": "FEC_ASIGNACION"
+            },
+            {
+                "order": 15,
+                "type": "VARCHAR(100)",
+                "size": 7,
+                "name": "COD_PROMOACUMULACION"
+            },
+            {
+                "order": 16,
+                "type": "VARCHAR(100)",
+                "size": 10,
+                "name": "TIP_ASIGNACION"
+            },
+            {
+                "order": 17,
+                "type": "VARCHAR(100)",
+                "size": 10,
+                "name": "COD_PERSONATH"
+            },
+            {
+                "order": 18,
+                "type": "VARCHAR(100)",
+                "size": 18,
+                "name": "ID_ACUMULACION"
+            }
+        ]
+    },
+    "T_ACUMULACIONDELOSI": {
+        "table_name": "T_ACUMULACIONDELOSI",
+        "pks": "",
+        "table_name_dir": "TACUDETD",
+        "data": [
+            {
+                "order": 1,
+                "type": "VARCHAR(100)",
+                "size": 18,
+                "name": "ID_ACUMULACIONDELOSI"
+            },
+            {
+                "order": 2,
+                "type": "BIGINT",
+                "size": 15,
+                "name": "NUM_SECUENCIAL"
+            },
+            {
+                "order": 3,
+                "type": "VARCHAR(100)",
+                "size": 14,
+                "name": "COD_PRODUCTODELOSI"
+            },
+            {
+                "order": 4,
+                "type": "VARCHAR(1000)",
+                "size": 45,
+                "name": "DES_ACUMULACIONDELOSI1"
+            },
+            {
+                "order": 5,
+                "type": "VARCHAR(1000)",
+                "size": 45,
+                "name": "DES_ACUMULACIONDELOSI2"
+            },
+            {
+                "order": 6,
+                "type": "VARCHAR(1000)",
+                "size": 45,
+                "name": "DES_ACUMULACIONDELOSI3"
+            },
+            {
+                "order": 7,
+                "type": "VARCHAR(1000)",
+                "size": 45,
+                "name": "DES_ACUMULACIONDELOSI4"
+            },
+            {
+                "order": 8,
+                "type": "VARCHAR(1000)",
+                "size": 45,
+                "name": "DES_ACUMULACIONDELOSI5"
+            },
+            {
+                "order": 9,
+                "type": "VARCHAR(1000)",
+                "size": 45,
+                "name": "DES_ACUMULACIONDELOSI6"
+            },
+            {
+                "order": 10,
+                "type": "VARCHAR(1000)",
+                "size": 45,
+                "name": "DES_ACUMULACIONDELOSI7"
+            },
+            {
+                "order": 11,
+                "type": "VARCHAR(1000)",
+                "size": 45,
+                "name": "DES_ACUMULACIONDELOSI8"
+            },
+            {
+                "order": 12,
+                "type": "VARCHAR(1000)",
+                "size": 45,
+                "name": "DES_ACUMULACIONDELOSI9"
+            },
+            {
+                "order": 13,
+                "type": "VARCHAR(1000)",
+                "size": 45,
+                "name": "DES_ACUMULACIONDELOSI10"
+            },
+            {
+                "order": 14,
+                "type": "DECIMAL(8,3)",
+                "size": 8,
+                "name": "CAN_ACUMULACIONDELOSI"
+            },
+            {
+                "order": 15,
+                "type": "VARCHAR(1000)",
+                "size": 1,
+                "name": "DES_SIGNO"
+            },
+            {
+                "order": 16,
+                "type": "DECIMAL(15,2)",
+                "size": 15,
+                "name": "IMP_SOLESPRODUCTO"
+            }
+        ]
+    },
+    "T_ACUMULACIONPRIMAX": {
+        "table_name": "T_ACUMULACIONPRIMAX",
+        "pks": "",
+        "table_name_dir": "TACUDETP",
+        "data": [
+            {
+                "order": 1,
+                "type": "VARCHAR(100)",
+                "size": 18,
+                "name": "ID_ACUMULACION"
+            },
+            {
+                "order": 2,
+                "type": "BIGINT",
+                "size": 15,
+                "name": "NUM_SECCUENCIAL"
+            },
+            {
+                "order": 3,
+                "type": "VARCHAR(100)",
+                "size": 14,
+                "name": "COD_PRODUCTOPRIMAX"
+            },
+            {
+                "order": 4,
+                "type": "VARCHAR(1000)",
+                "size": 50,
+                "name": "DES_ACUMULACIONPRIMAX"
+            },
+            {
+                "order": 5,
+                "type": "DECIMAL(8,3)",
+                "size": 8,
+                "name": "CAN_ACUMULACION"
+            },
+            {
+                "order": 6,
+                "type": "VARCHAR(1000)",
+                "size": 1,
+                "name": "DES_SIGNO"
+            },
+            {
+                "order": 7,
+                "type": "DECIMAL(15,2)",
+                "size": 15,
+                "name": "IMP_SOLESPRODUCTO"
+            }
+        ]
+    },
+    "T_CANJE": {
+        "table_name": "T_CANJE",
+        "pks": "COD_PERSONATH",
+        "table_name_dir": "TCANCAB",
+        "data": [
+            {
+                "order": 1,
+                "type": "VARCHAR(100)",
+                "size": 10,
+                "name": "COD_PERSONA"
+            },
+            {
+                "order": 2,
+                "type": "VARCHAR(100)",
+                "size": 3,
+                "name": "COD_CUENTA"
+            },
+            {
+                "order": 3,
+                "type": "VARCHAR(1000)",
+                "size": 10,
+                "name": "DES_ESTACIONTRABAJO"
+            },
+            {
+                "order": 4,
+                "type": "VARCHAR(100)",
+                "size": 20,
+                "name": "TIP_CANJE"
+            },
+            {
+                "order": 5,
+                "type": "VARCHAR(100)",
+                "size": 19,
+                "name": "NUM_TARJETA"
+            },
+            {
+                "order": 6,
+                "type": "VARCHAR(1000)",
+                "size": 4,
+                "name": "DES_CANJECADENA"
+            },
+            {
+                "order": 7,
+                "type": "VARCHAR(1000)",
+                "size": 4,
+                "name": "DES_CANJETIENDA"
+            },
+            {
+                "order": 8,
+                "type": "TIMESTAMP",
+                "size": 8,
+                "name": "FEC_TRANSACCION"
+            },
+            {
+                "order": 9,
+                "type": "TIMESTAMP",
+                "size": 8,
+                "name": "FEH_TRANSACCION"
+            },
+            {
+                "order": 10,
+                "type": "VARCHAR(1000)",
+                "size": 6,
+                "name": "DES_CAJA"
+            },
+            {
+                "order": 11,
+                "type": "BIGINT",
+                "size": 6,
+                "name": "NUM_SECUENCIA"
+            },
+            {
+                "order": 12,
+                "type": "VARCHAR(100)",
+                "size": 8,
+                "name": "COD_CAJERACENCOSUD"
+            },
+            {
+                "order": 13,
+                "type": "DECIMAL(15,2)",
+                "size": 15,
+                "name": "IMP_SOLESPAGADOS"
+            },
+            {
+                "order": 14,
+                "type": "DECIMAL(15,2)",
+                "size": 15,
+                "name": "NUM_PUNTOSCANJEADOS"
+            },
+            {
+                "order": 15,
+                "type": "DECIMAL(15,2)",
+                "size": 15,
+                "name": "NUM_PUNTOSANTESCANJE"
+            },
+            {
+                "order": 16,
+                "type": "VARCHAR(100)",
+                "size": 10,
+                "name": "COD_PERSONATH"
+            },
+            {
+                "order": 17,
+                "type": "VARCHAR(1000)",
+                "size": 1,
+                "name": "DES_ESTADOCANJE"
+            },
+            {
+                "order": 18,
+                "type": "VARCHAR(100)",
+                "size": 18,
+                "name": "COD_CANJE"
+            }
+        ]
+    },
+    "T_DETALLECANJE": {
+        "table_name": "T_DETALLECANJE",
+        "pks": "",
+        "table_name_dir": "TCANDET",
+        "data": [
+            {
+                "order": 1,
+                "type": "VARCHAR(100)",
+                "size": 18,
+                "name": "COD_CANJE"
+            },
+            {
+                "order": 2,
+                "type": "VARCHAR(100)",
+                "size": 3,
+                "name": "ID_SECUUENCIAL"
+            },
+            {
+                "order": 3,
+                "type": "VARCHAR(100)",
+                "size": 15,
+                "name": "COD_PRODUCTO"
+            },
+            {
+                "order": 4,
+                "type": "VARCHAR(1000)",
+                "size": 25,
+                "name": "DES_CANJE"
+            },
+            {
+                "order": 5,
+                "type": "VARCHAR(1000)",
+                "size": 30,
+                "name": "DES_RUBRO"
+            },
+            {
+                "order": 6,
+                "type": "VARCHAR(1000)",
+                "size": 30,
+                "name": "DES_CATEGORIA"
+            },
+            {
+                "order": 7,
+                "type": "VARCHAR(1000)",
+                "size": 30,
+                "name": "DES_FAMILIA"
+            },
+            {
+                "order": 8,
+                "type": "VARCHAR(100)",
+                "size": 5,
+                "name": "COD_CAMPA\u00c3\u2018A"
+            },
+            {
+                "order": 9,
+                "type": "VARCHAR(1000)",
+                "size": 50,
+                "name": "DES_CAMPA\u00c3\u2018A"
+            },
+            {
+                "order": 10,
+                "type": "BIGINT",
+                "size": 6,
+                "name": "CAN_CANJE"
+            },
+            {
+                "order": 11,
+                "type": "BIGINT",
+                "size": 6,
+                "name": "CAN_CANJEDEVUELTA"
+            },
+            {
+                "order": 12,
+                "type": "DECIMAL(15,2)",
+                "size": 15,
+                "name": "NUM_PUNTOSPRODUCTO"
+            },
+            {
+                "order": 13,
+                "type": "VARCHAR(1000)",
+                "size": 1,
+                "name": "DES_SIGNO"
+            },
+            {
+                "order": 14,
+                "type": "DECIMAL(15,2)",
+                "size": 15,
+                "name": "IMP_PRECIOUNUTARIO"
+            },
+            {
+                "order": 15,
+                "type": "VARCHAR(100)",
+                "size": 4,
+                "name": "COD_ALMACEN"
+            }
+        ]
+    },
+    "T_RECLAMOS": {
+        "table_name": "T_RECLAMOS",
+        "pks": "COD_PERSONATH",
+        "table_name_dir": "CLTESREC",
+        "data": [
+            {
+                "order": 1,
+                "type": "VARCHAR(100)",
+                "size": 15,
+                "name": "COD_REGISTRO"
+            },
+            {
+                "order": 2,
+                "type": "VARCHAR(100)",
+                "size": 10,
+                "name": "COD_PERSONATH"
+            },
+            {
+                "order": 3,
+                "type": "VARCHAR(100)",
+                "size": 19,
+                "name": "NUM_TARJETA"
+            },
+            {
+                "order": 4,
+                "type": "VARCHAR(100)",
+                "size": 5,
+                "name": "COD_RECLAMO"
+            },
+            {
+                "order": 5,
+                "type": "VARCHAR(1000)",
+                "size": 30,
+                "name": "DES_RECLAMO"
+            },
+            {
+                "order": 6,
+                "type": "VARCHAR(100)",
+                "size": 5,
+                "name": "COD_ESTADORECLAMO"
+            },
+            {
+                "order": 7,
+                "type": "VARCHAR(1000)",
+                "size": 25,
+                "name": "DES_ESTADORECLAMO"
+            },
+            {
+                "order": 8,
+                "type": "VARCHAR(100)",
+                "size": 10,
+                "name": "NOM_USUARIORECLAMO"
+            },
+            {
+                "order": 9,
+                "type": "TIMESTAMP",
+                "size": 8,
+                "name": "FEC_REGISTRORECLAMO"
+            },
+            {
+                "order": 10,
+                "type": "smalldatetime",
+                "size": 8,
+                "name": "FEH_REGISTRORECLAMO"
+            },
+            {
+                "order": 11,
+                "type": "VARCHAR(1000)",
+                "size": 4,
+                "name": "DES_REGISTRORECLAMOCADENA"
+            },
+            {
+                "order": 12,
+                "type": "VARCHAR(1000)",
+                "size": 4,
+                "name": "DES_REGISTRORECLAMOTIENDA"
+            },
+            {
+                "order": 13,
+                "type": "VARCHAR(100)",
+                "size": 10,
+                "name": "NOM_USUARIOATENCION"
+            },
+            {
+                "order": 14,
+                "type": "TIMESTAMP",
+                "size": 8,
+                "name": "FEC_ATENCIONRECLAMO"
+            },
+            {
+                "order": 15,
+                "type": "smalldatetime",
+                "size": 8,
+                "name": "FEH_ATENCIONRECLAMO"
+            },
+            {
+                "order": 16,
+                "type": "VARCHAR(1000)",
+                "size": 4,
+                "name": "DES_ATENCIONRECLAMOCADENA"
+            },
+            {
+                "order": 17,
+                "type": "VARCHAR(1000)",
+                "size": 4,
+                "name": "DES_ATENCIONRECLAMOTIENDA"
+            }
+        ]
+    },
+    "T_SALDO": {
+        "table_name": "T_SALDO",
+        "pks": "COD_PERSONA",
+        "table_name_dir": "CLTESSAL",
+        "data": [
+            {
+                "order": 1,
+                "type": "VARCHAR(100)",
+                "size": 10,
+                "name": "COD_PERSONA"
+            },
+            {
+                "order": 2,
+                "type": "VARCHAR(100)",
+                "size": 3,
+                "name": "COD_CUENTA"
+            },
+            {
+                "order": 3,
+                "type": "BIGINT",
+                "size": 15,
+                "name": "NUM_SALDOPUNTOS"
+            },
+            {
+                "order": 4,
+                "type": "VARCHAR(1000)",
+                "size": 1,
+                "name": "DES_SIGNO"
+            }
+        ]
+    },
+    "T_TRANSACCIONESCLIENTE": {
+        "table_name": "T_TRANSACCIONESCLIENTE",
+        "pks": "COD_PERSONA",
+        "table_name_dir": "CLTESDDA",
+        "data": [
+            {
+                "order": 1,
+                "type": "VARCHAR(1000)",
+                "size": 10,
+                "name": "COD_PERSONA"
+            },
+            {
+                "order": 2,
+                "type": "VARCHAR(1000)",
+                "size": 19,
+                "name": "NUM_TARJETA"
+            },
+            {
+                "order": 3,
+                "type": "VARCHAR(1000)",
+                "size": 10,
+                "name": "TIP_CLIENTE"
+            },
+            {
+                "order": 4,
+                "type": "VARCHAR(1000)",
+                "size": 2,
+                "name": "COD_TIP_PERSONA"
+            },
+            {
+                "order": 5,
+                "type": "VARCHAR(1000)",
+                "size": 1,
+                "name": "DES_SEXO"
+            },
+            {
+                "order": 6,
+                "type": "VARCHAR(1000)",
+                "size": 8,
+                "name": "FEC_NACIMIENTO"
+            },
+            {
+                "order": 7,
+                "type": "INTEGER",
+                "size": 4,
+                "name": "NUM_EDAD"
+            },
+            {
+                "order": 8,
+                "type": "VARCHAR(1000)",
+                "size": 2,
+                "name": "DES_RANGOEDAD"
+            },
+            {
+                "order": 9,
+                "type": "VARCHAR(1000)",
+                "size": 20,
+                "name": "DES_NOMBRE_CORTO"
+            },
+            {
+                "order": 10,
+                "type": "VARCHAR(1000)",
+                "size": 2,
+                "name": "COD_ESTADO_CIVIL"
+            },
+            {
+                "order": 11,
+                "type": "INTEGER",
+                "size": 2,
+                "name": "NUM_DEPENDIENTES"
+            },
+            {
+                "order": 12,
+                "type": "VARCHAR(1000)",
+                "size": 2,
+                "name": "COD_NIVEL_EDUCACION"
+            },
+            {
+                "order": 13,
+                "type": "VARCHAR(1000)",
+                "size": 2,
+                "name": "COD_SITUACION_LABORAL"
+            },
+            {
+                "order": 14,
+                "type": "INTEGER",
+                "size": 1,
+                "name": "FLG_TIENE_HIJOS"
+            },
+            {
+                "order": 15,
+                "type": "INTEGER",
+                "size": 1,
+                "name": "FLG_TIENE_AUTOS"
+            },
+            {
+                "order": 16,
+                "type": "INTEGER",
+                "size": 1,
+                "name": "FLG_TIENE_TARJETA_C"
+            },
+            {
+                "order": 17,
+                "type": "INTEGER",
+                "size": 1,
+                "name": "FLG_TIENE_TELEFONO"
+            },
+            {
+                "order": 18,
+                "type": "INTEGER",
+                "size": 1,
+                "name": "FLG_TIENE_CORREO"
+            },
+            {
+                "order": 19,
+                "type": "INTEGER",
+                "size": 1,
+                "name": "FLG_TIENE_CONYUGUE"
+            },
+            {
+                "order": 20,
+                "type": "INTEGER",
+                "size": 1,
+                "name": "FLG_DIRECCION_REGISTRADA"
+            },
+            {
+                "order": 21,
+                "type": "INTEGER",
+                "size": 1,
+                "name": "FLG_TIENE_TARJETA_L"
+            },
+            {
+                "order": 22,
+                "type": "INTEGER",
+                "size": 1,
+                "name": "FLG_DATOS_ERRADOS"
+            },
+            {
+                "order": 23,
+                "type": "INTEGER",
+                "size": 1,
+                "name": "DES_ESTADO_REGISTRO"
+            },
+            {
+                "order": 24,
+                "type": "VARCHAR(1000)",
+                "size": 8,
+                "name": "FEC_CREACION"
+            },
+            {
+                "order": 25,
+                "type": "VARCHAR(1000)",
+                "size": 8,
+                "name": "FEH_CREACION"
+            },
+            {
+                "order": 26,
+                "type": "VARCHAR(1000)",
+                "size": 10,
+                "name": "NOM_USUARIO_CREACION"
+            },
+            {
+                "order": 27,
+                "type": "VARCHAR(1000)",
+                "size": 8,
+                "name": "FEC_ULT_MODIFICACION"
+            },
+            {
+                "order": 28,
+                "type": "VARCHAR(1000)",
+                "size": 8,
+                "name": "FEH_ULT_MODIFICACION"
+            },
+            {
+                "order": 29,
+                "type": "VARCHAR(1000)",
+                "size": 10,
+                "name": "NOM_USUARIO_ULTIMA_MODIFICACION"
+            },
+            {
+                "order": 30,
+                "type": "VARCHAR(1000)",
+                "size": 50,
+                "name": "DES_TERCER_NOMBRE"
+            },
+            {
+                "order": 31,
+                "type": "DECIMAL(15,2)",
+                "size": 15,
+                "name": "NUM_SALDO_DISPONIBLE"
+            },
+            {
+                "order": 32,
+                "type": "DECIMAL(15,2)",
+                "size": 15,
+                "name": "NUM_SALDO_CONTABLE"
+            },
+            {
+                "order": 33,
+                "type": "VARCHAR(1000)",
+                "size": 50,
+                "name": "FLG_DIRECCION_ERRADA"
+            },
+            {
+                "order": 34,
+                "type": "VARCHAR(1000)",
+                "size": 6,
+                "name": "DES_COD_POSTAL"
+            },
+            {
+                "order": 35,
+                "type": "VARCHAR(1000)",
+                "size": 25,
+                "name": "DES_DISTRITO"
+            },
+            {
+                "order": 36,
+                "type": "VARCHAR(1000)",
+                "size": 25,
+                "name": "DES_PROVINCIA"
+            },
+            {
+                "order": 37,
+                "type": "VARCHAR(1000)",
+                "size": 25,
+                "name": "DES_DEPARTAMENTO"
+            },
+            {
+                "order": 38,
+                "type": "VARCHAR(1000)",
+                "size": 1,
+                "name": "DES_TIPO"
+            },
+            {
+                "order": 39,
+                "type": "VARCHAR(1000)",
+                "size": 1,
+                "name": "FLG_DIRECCION_ERROR"
+            },
+            {
+                "order": 40,
+                "type": "VARCHAR(1000)",
+                "size": 1,
+                "name": "FLG_DESEA_EMAIL"
+            },
+            {
+                "order": 41,
+                "type": "VARCHAR(1000)",
+                "size": 1,
+                "name": "FLG_DICCIO"
+            },
+            {
+                "order": 42,
+                "type": "VARCHAR(1000)",
+                "size": 5,
+                "name": "DES_PREFIJO_1"
+            },
+            {
+                "order": 43,
+                "type": "VARCHAR(1000)",
+                "size": 10,
+                "name": "NUM_TELEFONO_1"
+            },
+            {
+                "order": 44,
+                "type": "VARCHAR(1000)",
+                "size": 1,
+                "name": "FLG_TELEF_NO_DESEA_1"
+            },
+            {
+                "order": 45,
+                "type": "VARCHAR(1000)",
+                "size": 5,
+                "name": "DES_PREFIJO_2"
+            },
+            {
+                "order": 46,
+                "type": "VARCHAR(1000)",
+                "size": 10,
+                "name": "NUM_TELEFONO_2"
+            },
+            {
+                "order": 47,
+                "type": "VARCHAR(1000)",
+                "size": 1,
+                "name": "FLG_TELEF_NO_DESEA_2"
+            },
+            {
+                "order": 48,
+                "type": "VARCHAR(1000)",
+                "size": 5,
+                "name": "DES_PREFIJO_3"
+            },
+            {
+                "order": 49,
+                "type": "VARCHAR(1000)",
+                "size": 10,
+                "name": "NUM_TELEFONO_3"
+            },
+            {
+                "order": 50,
+                "type": "VAsRCHAR(1000)",
+                "size": 1,
+                "name": "FLG_TELEF_NO_DESEA_3"
+            },
+            {
+                "order": 51,
+                "type": "VARCHAR(1000)",
+                "size": 5,
+                "name": "DES_PREFIJO_4"
+            },
+            {
+                "order": 52,
+                "type": "VARCHAR(1000)",
+                "size": 10,
+                "name": "NUM_TELEFONO_4"
+            },
+            {
+                "order": 53,
+                "type": "VARCHAR(1000)",
+                "size": 1,
+                "name": "FLG_TELEF_NO_DESEA_4"
+            },
+            {
+                "order": 54,
+                "type": "VARCHAR(1000)",
+                "size": 5,
+                "name": "DES_PREFIJO_5"
+            },
+            {
+                "order": 55,
+                "type": "VARCHAR(1000)",
+                "size": 10,
+                "name": "NUM_TELEFONO_5"
+            },
+            {
+                "order": 56,
+                "type": "VARCHAR(1000)",
+                "size": 1,
+                "name": "FLG_TELEF_NO_DESEA_5"
+            },
+            {
+                "order": 57,
+                "type": "VARCHAR(1000)",
+                "size": 100,
+                "name": "DES_EMAIL_1"
+            },
+            {
+                "order": 58,
+                "type": "VARCHAR(1000)",
+                "size": 1,
+                "name": "FLG_EMAIL_NO_DESEA_1"
+            },
+            {
+                "order": 59,
+                "type": "VARCHAR(1000)",
+                "size": 100,
+                "name": "DES_EMAIL_2"
+            },
+            {
+                "order": 60,
+                "type": "VARCHAR(1000)",
+                "size": 1,
+                "name": "FLG_EMAIL_NO_DESEA_2"
+            },
+            {
+                "order": 61,
+                "type": "VARCHAR(1000)",
+                "size": 100,
+                "name": "DES_EMAIL_3"
+            },
+            {
+                "order": 62,
+                "type": "VARCHAR(1000)",
+                "size": 1,
+                "name": "FLG_EMAIL_NO_DESEA_3"
+            },
+            {
+                "order": 63,
+                "type": "VARCHAR(1000)",
+                "size": 100,
+                "name": "DES_EMAIL_4"
+            },
+            {
+                "order": 64,
+                "type": "VARCHAR(1000)",
+                "size": 1,
+                "name": "FLG_EMAIL_NO_DESEA_4"
+            },
+            {
+                "order": 65,
+                "type": "VARCHAR(1000)",
+                "size": 100,
+                "name": "DES_EMAIL_5"
+            },
+            {
+                "order": 66,
+                "type": "VARCHAR(1000)",
+                "size": 1,
+                "name": "FLG_EMAIL_NO_DESEA_5"
+            },
+            {
+                "order": 67,
+                "type": "VARCHAR(1000)",
+                "size": 20,
+                "name": "DES_COORDENADAY"
+            },
+            {
+                "order": 68,
+                "type": "VARCHAR(1000)",
+                "size": 20,
+                "name": "DES_COORDENADAX"
+            },
+            {
+                "order": 69,
+                "type": "VARCHAR(1000)",
+                "size": 1,
+                "name": "DES_NSE"
+            },
+            {
+                "order": 70,
+                "type": "VARCHAR(1000)",
+                "size": 10,
+                "name": "DES_RANGO_EDAD"
+            },
+            {
+                "order": 71,
+                "type": "VARCHAR(1000)",
+                "size": 1,
+                "name": "FLG_SISTEMA_FINANCIERO"
+            },
+            {
+                "order": 72,
+                "type": "INTEGER",
+                "size": 1,
+                "name": "FLG_01"
+            },
+            {
+                "order": 73,
+                "type": "INTEGER",
+                "size": 1,
+                "name": "FLG_02"
+            },
+            {
+                "order": 74,
+                "type": "INTEGER",
+                "size": 1,
+                "name": "FLG_03"
+            },
+            {
+                "order": 75,
+                "type": "INTEGER",
+                "size": 1,
+                "name": "FLG_04"
+            },
+            {
+                "order": 76,
+                "type": "INTEGER",
+                "size": 1,
+                "name": "FLG_05"
+            },
+            {
+                "order": 77,
+                "type": "INTEGER",
+                "size": 1,
+                "name": "FLG_06"
+            },
+            {
+                "order": 78,
+                "type": "INTEGER",
+                "size": 1,
+                "name": "FLG_07"
+            },
+            {
+                "order": 79,
+                "type": "INTEGER",
+                "size": 1,
+                "name": "FLG_08"
+            },
+            {
+                "order": 80,
+                "type": "INTEGER",
+                "size": 1,
+                "name": "FLG_09"
+            },
+            {
+                "order": 81,
+                "type": "INTEGER",
+                "size": 1,
+                "name": "FLG_10"
+            }
+        ]
+    }
+}
