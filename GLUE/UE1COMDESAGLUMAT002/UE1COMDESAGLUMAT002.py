@@ -18,6 +18,10 @@ import json
 import operator
 import io
 
+import boto3
+import botocore
+from botocore.errorfactory import ClientError
+
 ## @params: [JOB_NAME]
 args = getResolvedOptions(sys.argv, ['JOB_NAME','CONFIG_TABLE','FILE_PROCCES'])
 
@@ -230,14 +234,20 @@ def load_full_load(path_full, fields):
 
 def load_delta_load(path_full_delta, fields):
     
+    print("load_delta_load path_full_delta", path_full_delta)
+    #rrodriguez@nonusperu.com
     ###### ALL DELTA
     #Validar si no hay cambios
-    frames = []
+
+    df_delta_all = None
     for p in path_full_delta:
         df_tmp = spark.read.option("encoding", "ISO-8859-1").text(p)
-        frames.append(df_tmp)
 
-    df_delta_all = pd.concat(frames)
+        if df_delta_all:
+            df_delta_all = df_delta_all.union(df_tmp)
+        else:
+            df_delta_all = df_tmp
+
 
     df_delta_all = get_df_data(df_delta_all, fields, "DELTA")
 
@@ -319,6 +329,7 @@ path_base = f's3://{bucket}/{prefix_dir}'
 path_full = f'{path_base}/{table_name_dir}/FULL/'
 path_key_load01 = f'{prefix_dir}/{table_name_dir}/FULL/LOAD001.TXT' # key first LOAD
 
+path_prefix_delta = f"{prefix_dir}/{table_name_dir}/DELTA/"
 path_full_delta = f'{path_base}/{table_name_dir}/DELTA/' 
 
 
@@ -341,15 +352,35 @@ elif procces == 'DELTA':
            load("s3://bucket-name/file-name.csv")
     """
     path = []
-    if file_process != "None":
+    
+    if file_process.startswith('from-'):
+        date_from_str =  file_process.replace("from-","")
+        #date_from_str = "20230923"
+
+        days = dates_from_to_now(date_from_str)
+        s3 = boto3.client('s3')
+        #days_process = []
+        #Validate_data
+        for d in days:
+            path_delta_day = f"{path_prefix_delta}{d}.001"
+
+            #s3://ue1stgdesaas3ftp001/RAW-SFTP/MATRIX/CLTESDAT/DELTA/20230801.001
+            print(bucket,path_delta_day)
+            try:
+                s3.head_object(Bucket=bucket, Key=path_delta_day)
+                path.append(f's3://{bucket}/{path_delta_day}')
+            except botocore.exceptions.ClientError as e:
+                print(e)
+                print(f"No existe data para este dia {d}")
+        if len(path) == 0:
+            raise (f" No hay datos para procesar desde {date_from_str}")
+    elif file_process != "None":
         partition = file_process.split(".")[-1]
         config_table["table_delta_redshift"]  = "{0}.{1}__cdc_{2}".format(schema_redshift, name_table,partition)
         print("partition", partition)
         
 
-        import boto3
-        import botocore
-        from botocore.errorfactory import ClientError
+        
 
         s3 = boto3.client('s3')
         try:
@@ -362,39 +393,14 @@ elif procces == 'DELTA':
                 raise (f"No existe actualizacion para {path}")
             else:
                 raise ("Error en la ingesta")
-    elif file_process.startswith('from-'):
-        date_from_str =  file_process.replace("from-","")
-        date_from_str = "20230923"
 
-        days = dates_from_to_now(date_from_str)
-        s3 = boto3.client('s3')
-        #days_process = []
-        #Validate_data
-        for d in days:
-            path_delta_day = f"{path_full_delta}{d}.001"
-
-            #s3://ue1stgdesaas3ftp001/RAW-SFTP/MATRIX/CLTESDAT/DELTA/20230801.001
-            try:
-                s3.head_object(Bucket=bucket, Key=path_delta_day)
-                path.appen(f's3://{bucket}/{file_process}')
-            except botocore.exceptions.ClientError as e:
-                print(f"No existe data para este dia {d}")
-
-
-
-
-        
     else:
         path.append(path_full_delta)
 
     print("table_delta_redshift", config_table["table_delta_redshift"])
     #path = f'{path_base}/{file_process}'
 
-
-    
-
     print("path", path)
-
 
     load_delta_load(path, fields)
 
@@ -409,7 +415,7 @@ elif procces == 'FULL-DELTA':
 
     load_full_load(path_full, fields)
 
-    load_delta_load(path_full_delta, fields)
+    load_delta_load([path_full_delta], fields)
 
 else:
     raise ("ERROR: Proceso no configurado")
