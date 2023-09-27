@@ -8,6 +8,8 @@ import boto3
 
 
 def lambda_handler(event, context):
+    
+    name_job_glue = "UE1COMDESAGLUMAT002"
     client = boto3.client('glue')
     config_path = "config.json"
 
@@ -37,8 +39,10 @@ def lambda_handler(event, context):
                 
                 print(file_process, data_str)
 
+                if "from_date" in event:
+                    file_process = f"from-{event['from_date']}"
                 response = client.start_job_run(
-                           JobName = "job-matrix-vn", #'job-matrix-backup',#'job-matrix-backup', #'job-matrix-test',#job_matrix #job-M_ACUMULACION
+                           JobName = name_job_glue,
                            Arguments = {
                              '--CONFIG_TABLE':   data_str,
                              '--FILE_PROCCES': file_process
@@ -67,7 +71,7 @@ def lambda_handler(event, context):
                     data_str = dumps(config_table_base)
                     print(file_process, data_str)
                     response = client.start_job_run(
-                                   JobName = "job-matrix-vn", #'job-matrix-backup',#'job-matrix-backup', #'job-matrix-test',#job_matrix #job-M_ACUMULACION
+                                   JobName = name_job_glue,
                                    Arguments = {
                                      '--CONFIG_TABLE':   data_str,
                                      '--FILE_PROCCES': file_process
